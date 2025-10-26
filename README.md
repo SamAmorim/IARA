@@ -76,9 +76,13 @@ Esses dados permitem definir a **linha de base legítima** e injetar padrões de
 - `Software-Development` → simulador em Java + integração com banco de dados.
 
 ![graphviz.png](imgs/graphviz.png)
+
 ![graphviz (1).png](imgs/graphviz_(1).png)
+
 ![graphviz (2).png](imgs/graphviz_(2).png)
+
 ![graphviz (4).png](imgs/graphviz_(4).png)
+
 ![graphviz (3).png](imgs/graphviz_(3).png)
 
 ---
