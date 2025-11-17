@@ -17,17 +17,6 @@
 
 ---
 
-## 👨‍💻 A Equipe
-
-Este projeto foi desenvolvido por:
-
-* **Samuel Amorim:** Engenharia de dados, Modelagem estatística, Ciência de dados  
-* **Leonardo Rondam:** Análise de Dados  
-* **Nicholas Campanelli:** Desenvolvimento de software  
-* **Rodrigo Genaro:** Arquitetura de Cloud  
-
----
-
 ## 📌 Descrição Geral do Projeto
 
 O PIX revolucionou as transações, mas trouxe consigo um desafio crescente: a sofisticação das fraudes.  
