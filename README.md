@@ -35,18 +35,6 @@ O modelo binário classifica a transação em milissegundos e, quando necessári
 
 ---
 
-## 📊 Análise de Dados Reais (Ponto de Partida)
-
-Antes de gerar os dados sintéticos, analisamos dados públicos do BACEN para entender:
-
-* **Volume por Estado:** SP e RJ lideram o volume financeiro do PIX.  
-* **Tipo de Chave:** A chave aleatória é a mais utilizada.  
-* **Instituições:** Nu Pagamentos e PicPay aparecem entre os maiores volumes de recebimento PF.
-
-Essa análise guiou toda a modelagem estatística do ambiente sintético.
-
----
-
 ## 🏗️ Pilares Estratégicos
 
 ### 1. O Ecossistema de Dados Sintéticos  
