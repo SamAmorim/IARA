@@ -1,0 +1,71 @@
+site_name: IARA - Inteligencia Antifraude e Risco Automatizada
+site_url: https://SamAmorim.github.io/Fraud-Finder-Pix/ 
+site_author: Samuel Amorim, Leonardo Rondam, Nicholas Campanelli, Rodrigo Genaro
+repo_url: https://github.com/SamAmorim/Fraud-Finder-Pix/
+docs_dir: docs 
+
+# ----------------------------------------------------
+# Configura��o do Tema Material (MODO ESCURO)
+# ----------------------------------------------------
+theme:
+  name: material
+  palette:
+    scheme: slate # MODO ESCURO
+    primary: indigo 
+    accent: light blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.expand
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest 
+
+# ----------------------------------------------------
+# Extens�es e Suporte a LaTeX
+# ----------------------------------------------------
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - admonition
+  - toc:
+      permalink: true
+      
+# Inclus�o da biblioteca MathJax para renderiza��o de f�rmulas
+extra_javascript:
+  - javascripts/config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# ----------------------------------------------------
+# INCLUS�O DO �CONE (Favicon)
+# ----------------------------------------------------
+extra:
+  favicon: 'docs/assets/icon.png' 
+
+# ----------------------------------------------------
+# Estrutura de Navega��o (T�tulos Simplificados para Estabilidade)
+# ----------------------------------------------------
+nav:
+  - Inicio e Proposta: index.md
+  
+  - Arquitetura e Stacks:
+    - Visao Geral do Software: 01_arquitetura/software.md
+    - Arquitetura de Cloud: 01_arquitetura/cloud.md
+    - Stacks de Tecnologia: 01_arquitetura/stacks.md
+    
+  - Modelagem Estatistica:
+    - Geracao de Clientes e Contas: 02_modelagem_estatistica/clientes_contas.md
+    - Geracao de Fraudes Sinteticas: 02_modelagem_estatistica/fraudes_sinteticas.md
+    - Formulas e Variaveis: 02_modelagem_estatistica/formulas_e_variaveis.md
+    
+  - Modelos de Inteligencia Artificial:
+    - Arquitetura em Cascata: 03_ia_modelos/arquitetura_cascata.md
+    - Treinamento e Pipeline: 03_ia_modelos/treinamento_pipeline.md
+    
+  - Avaliacao e Resultados:
+    - Metricas e Matriz de Confusao: 04_avaliacao/metricas.md
+    - Analise de Erros e Vies: 04_avaliacao/analise_erros.md

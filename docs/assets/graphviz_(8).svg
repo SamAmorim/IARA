@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="707pt" height="392pt" viewBox="0.00 0.00 707.00 392.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 388)">
+<title>FraudeTriangulacaoGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-388 703.23,-388 703.23,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_niveis</title>
+<polygon fill="none" stroke="black" points="8,-8 8,-376 543.57,-376 543.57,-8 8,-8"/>
+</g>
+<!-- N1_C1 -->
+<g id="node1" class="node">
+<title>N1_C1</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="71.33" cy="-225" rx="55.33" ry="55.33"/>
+<text xml:space="preserve" text-anchor="middle" x="71.33" y="-228" font-family="Arial" font-size="10.00">Conta Origem</text>
+<text xml:space="preserve" text-anchor="middle" x="71.33" y="-216" font-family="Arial" font-size="10.00">(Nó Raiz)</text>
+</g>
+<!-- N2_C1 -->
+<g id="node2" class="node">
+<title>N2_C1</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="309.14" cy="-148" rx="67.44" ry="67.44"/>
+<text xml:space="preserve" text-anchor="middle" x="309.14" y="-145" font-family="Arial" font-size="10.00">Conta Intermediária 1</text>
+</g>
+<!-- N1_C1&#45;&gt;N2_C1 -->
+<g id="edge1" class="edge">
+<title>N1_C1-&gt;N2_C1</title>
+<path fill="none" stroke="#e74c3c" stroke-width="2" d="M124.37,-208.01C156.45,-197.53 198.11,-183.93 233.65,-172.32"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" stroke-width="2" points="233.17,-176.16 241.59,-169.73 231,-169.51 233.17,-176.16"/>
+<text xml:space="preserve" text-anchor="middle" x="184.18" y="-202.79" font-family="Arial" font-size="9.00">Tx 1 ($p_1 cdot V$)</text>
+</g>
+<!-- N2_C2 -->
+<g id="node3" class="node">
+<title>N2_C2</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="309.14" cy="-301" rx="67.44" ry="67.44"/>
+<text xml:space="preserve" text-anchor="middle" x="309.14" y="-298" font-family="Arial" font-size="10.00">Conta Intermediária 2</text>
+</g>
+<!-- N1_C1&#45;&gt;N2_C2 -->
+<g id="edge2" class="edge">
+<title>N1_C1-&gt;N2_C2</title>
+<path fill="none" stroke="#e74c3c" stroke-width="2" d="M124.37,-241.77C156.45,-252.11 198.11,-265.54 233.65,-276.99"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" stroke-width="2" points="231,-279.81 241.59,-279.55 233.15,-273.15 231,-279.81"/>
+<text xml:space="preserve" text-anchor="middle" x="184.18" y="-274.74" font-family="Arial" font-size="9.00">Tx 2 ($p_2 cdot V$)</text>
+</g>
+<!-- N3_C1 -->
+<g id="node4" class="node">
+<title>N3_C1</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="482.83" cy="-69" rx="52.74" ry="52.74"/>
+<text xml:space="preserve" text-anchor="middle" x="482.83" y="-66" font-family="Arial" font-size="10.00">Conta Destino 1</text>
+</g>
+<!-- N2_C1&#45;&gt;N3_C1 -->
+<g id="edge3" class="edge">
+<title>N2_C1-&gt;N3_C1</title>
+<path fill="none" stroke="#e74c3c" stroke-width="2" d="M370.67,-120.15C388.02,-112.16 406.89,-103.48 424.06,-95.58"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" stroke-width="2" points="424.14,-99.4 431.76,-92.04 421.22,-93.04 424.14,-99.4"/>
+<text xml:space="preserve" text-anchor="middle" x="403.34" y="-111.2" font-family="Arial" font-size="9.00">Tx 3</text>
+</g>
+<!-- N3_C2 -->
+<g id="node5" class="node">
+<title>N3_C2</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="482.83" cy="-192" rx="52.74" ry="52.74"/>
+<text xml:space="preserve" text-anchor="middle" x="482.83" y="-189" font-family="Arial" font-size="10.00">Conta Destino 2</text>
+</g>
+<!-- N2_C1&#45;&gt;N3_C2 -->
+<g id="edge4" class="edge">
+<title>N2_C1-&gt;N3_C2</title>
+<path fill="none" stroke="#e74c3c" stroke-width="2" d="M374.56,-164.51C389.5,-168.34 405.36,-172.4 420.18,-176.2"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" stroke-width="2" points="417.78,-179.2 428.34,-178.29 419.52,-172.42 417.78,-179.2"/>
+<text xml:space="preserve" text-anchor="middle" x="403.34" y="-176.64" font-family="Arial" font-size="9.00">Tx 4</text>
+</g>
+<!-- N3_C3 -->
+<g id="node6" class="node">
+<title>N3_C3</title>
+<ellipse fill="#a3e4d7" stroke="black" cx="482.83" cy="-315" rx="52.74" ry="52.74"/>
+<text xml:space="preserve" text-anchor="middle" x="482.83" y="-312" font-family="Arial" font-size="10.00">Conta Destino 3</text>
+</g>
+<!-- N2_C1&#45;&gt;N3_C3 -->
+<g id="edge5" class="edge">
+<title>N2_C1-&gt;N3_C3</title>
+<path fill="none" stroke="#e74c3c" stroke-width="2" d="M357.97,-194.52C382.48,-218.36 412.18,-247.25 436.35,-270.76"/>
+<polygon fill="#e74c3c" stroke="#e74c3c" stroke-width="2" points="432.54,-271.94 442.15,-276.4 437.42,-266.92 432.54,-271.94"/>
+<text xml:space="preserve" text-anchor="middle" x="403.34" y="-249.16" font-family="Arial" font-size="9.00">Tx 5</text>
+</g>
+<!-- Ruido -->
+<g id="node7" class="node">
+<title>Ruido</title>
+<polygon fill="#d5dbdb" stroke="black" points="699.23,-87 629.59,-87 629.59,-51 699.23,-51 699.23,-87"/>
+<text xml:space="preserve" text-anchor="middle" x="664.41" y="-72" font-family="Arial" font-size="10.00">Tx Ruído</text>
+<text xml:space="preserve" text-anchor="middle" x="664.41" y="-60" font-family="Arial" font-size="10.00">(is_fraud=0)</text>
+</g>
+<!-- N3_C1&#45;&gt;Ruido -->
+<g id="edge6" class="edge">
+<title>N3_C1-&gt;Ruido</title>
+<path fill="none" stroke="#3498db" stroke-dasharray="5,2" d="M535.77,-69C561.71,-69 592.79,-69 617.8,-69"/>
+<polygon fill="#3498db" stroke="#3498db" points="617.66,-72.5 627.66,-69 617.66,-65.5 617.66,-72.5"/>
+<text xml:space="preserve" text-anchor="middle" x="582.58" y="-71.7" font-family="Arial" font-size="9.00">Cria Tx Ruído</text>
+</g>
+</g>
+</svg>

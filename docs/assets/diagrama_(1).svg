@@ -1,0 +1,284 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 898 641" width="898" height="641">
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #ffffff } 
+		.t1 { font-size: 12px;fill: #000000;font-family: "Times" } 
+		.s2 { fill: none;stroke: #8fbce6 } 
+		.t3 { font-size: 10px;fill: #000000;font-family: "Times" } 
+		.s4 { fill: none;stroke: #f6c9a9 } 
+		.t5 { font-size: 12px;fill: #ff9000;font-family: "Times" } 
+		.s6 { fill: none;stroke: #cdebcf } 
+		.t7 { font-size: 10px;fill: #00984c;font-family: "Times" } 
+		.s8 { fill: #e8f4fb;stroke: #2b6cb0;stroke-width: 2 } 
+		.t9 { font-size: 10px;fill: #000000;font-family: "Helvetica" } 
+		.s10 { fill: #fff0e6;stroke: #d69e2e;stroke-width: 2 } 
+		.s11 { fill: none;stroke: #d69e2e;stroke-width: 2 } 
+		.s12 { fill: none;stroke: #2b6cb0 } 
+		.s13 { fill: #2b6cb0;stroke: #2b6cb0 } 
+		.s14 { fill: #fff0e6;stroke: #000000 } 
+		.s15 { fill: none;stroke: #000000 } 
+		.s16 { fill: none;stroke: #9f7aea;stroke-dasharray: 1,5 } 
+		.s17 { fill: #9f7aea;stroke: #9f7aea } 
+		.s18 { fill: #edf9ef;stroke: #2f855a;stroke-width: 2 } 
+		.s19 { fill: #bdd4ff;stroke: #005aff } 
+		.s20 { fill: none;stroke: #7aa9ff } 
+		.s21 { fill: none;stroke: #d69e2e } 
+		.s22 { fill: #edf9ef;stroke: #000000 } 
+		.s23 { fill: none;stroke: #276749;stroke-dasharray: 5,2 } 
+		.s24 { fill: #276749;stroke: #276749 } 
+	</style>
+	<g id="graph0">
+		<path fill-rule="evenodd" class="s0" d="m0 640.65v-640.65h898v640.65h-898z"/>
+		<text id="Fraud-Finder-Pix — Arquitetura de Software" style="transform: matrix(1,0,0,1,449,18.8)" >
+			<tspan x="-129.5" y="0" class="t1">Fraud-Finder-Pix — Arquitetura de Software
+</tspan>
+		</text>
+		<g id="clust1">
+			<path class="s2" d="m204 108.8h66c6 0 12-6 12-12v-50.4c0-6-6-12-12-12h-66c-6 0-12 6-12 12v50.4c0 6 6 12 12 12z"/>
+			<text id="Frontend (App)" style="transform: matrix(1,0,0,1,237,49.2)" >
+				<tspan x="-37.3" y="0" class="t3">Frontend (App)
+</tspan>
+			</text>
+		</g>
+		<g id="clust2">
+			<path class="s4" d="m24 563.65h468c6 0 12-6 12-12v-379.25c0-6-6-12-12-12h-468c-6 0-12 6-12 12v379.25c0 6 6 12 12 12z"/>
+			<text id="API Backend (PixAPI)" style="transform: matrix(1,0,0,1,83,181.2)" >
+				<tspan x="-61.8" y="0" class="t5">API Backend (PixAPI)
+</tspan>
+			</text>
+		</g>
+		<g id="clust3">
+			<path class="s6" d="m524 563.65h350c6 0 12-6 12-12v-172c0-6-6-12-12-12h-350c-6 0-12 6-12 12v172c0 6 6 12 12 12z"/>
+			<text id="Serviço de Análise (AnaliseAPI)" style="transform: matrix(1,0,0,1,798,383.45)" >
+				<tspan x="-77.5" y="0" class="t7">Serviço de Análise (AnaliseAPI)
+</tspan>
+			</text>
+		</g>
+		<g id="node1">
+			<path fill-rule="evenodd" class="s8" d="m268.07 64.8h-62.14v36h62.14v-36z"/>
+			<text id="Vite React" style="transform: matrix(1,0,0,1,237,79.8)" >
+				<tspan x="-23" y="0" class="t9">Vite React
+</tspan>
+			</text>
+			<text id="(app)" style="transform: matrix(1,0,0,1,237,91.8)" >
+				<tspan x="-11.7" y="0" class="t9">(app)
+</tspan>
+			</text>
+		</g>
+		<g id="node2">
+			<path fill-rule="evenodd" class="s10" d="m271.13 190.8h-68.26v4h-4v4h4v20h-4v4h4v4h68.26v-36z"/>
+			<path fill-rule="evenodd" class="s11" d="m202.87 194.8h4v4h-4"/>
+			<path fill-rule="evenodd" class="s11" d="m202.87 218.8h4v4h-4"/>
+			<text id="Spring Boot" style="transform: matrix(1,0,0,1,237,205.8)" >
+				<tspan x="-26.1" y="0" class="t9">Spring Boot
+</tspan>
+			</text>
+			<text id="(pixapi)" style="transform: matrix(1,0,0,1,237,217.8)" >
+				<tspan x="-16.4" y="0" class="t9">(pixapi)
+</tspan>
+			</text>
+		</g>
+		<g id="edge1">
+			<path class="s12" d="m237 101.56c0 20.17 0 53.36 0 77.28"/>
+			<path fill-rule="evenodd" class="s13" d="m240.5 178.55l-3.5 10-3.5-10h7z"/>
+			<text id="HTTP / REST" style="transform: matrix(1,0,0,1,298.43,131.4)" >
+				<tspan x="-30.5" y="0" class="t3">HTTP / REST
+</tspan>
+			</text>
+			<text id="(Transações / Contas)" style="transform: matrix(1,0,0,1,298.43,148.2)" >
+				<tspan x="-53.9" y="0" class="t3">(Transações / Contas)
+</tspan>
+			</text>
+		</g>
+		<g id="node3">
+			<path fill-rule="evenodd" class="s14" d="m212.42 284.22h-192.84v36h198.84v-30l-6-6z"/>
+			<path fill-rule="evenodd" class="s15" d="m212.42 284.22v6"/>
+			<path fill-rule="evenodd" class="s15" d="m218.42 290.22h-6"/>
+			<text id="Controladores" style="transform: matrix(1,0,0,1,119,299.22)" >
+				<tspan x="-31.4" y="0" class="t9">Controladores
+</tspan>
+			</text>
+			<text id="(TransacoesController, ContasController)" style="transform: matrix(1,0,0,1,119,311.22)" >
+				<tspan x="-91" y="0" class="t9">(TransacoesController, ContasController)
+</tspan>
+			</text>
+		</g>
+		<g id="edge9">
+			<path class="s4" d="m208.49 227.64c-22.63 16.21-53.31 39.99-72.36 56.09"/>
+		</g>
+		<g id="edge12">
+			<path class="s15" d="m219.45 227.64c-19.22 16.21-49.92 39.99-72.43 56.09"/>
+		</g>
+		<g id="node5">
+			<path class="s14" d="m154.79 515.65c0-2.21-16.04-4-35.79-4-19.75 0-35.79 1.79-35.79 4v36c0 2.21 16.04 4 35.79 4 19.75 0 35.79-1.79 35.79-4z"/>
+			<path class="s15" d="m154.79 515.65c0 2.21-16.04 4-35.79 4-19.75 0-35.79-1.79-35.79-4"/>
+			<text id="Repositórios" style="transform: matrix(1,0,0,1,119,530.65)" >
+				<tspan x="-27.8" y="0" class="t9">Repositórios
+</tspan>
+			</text>
+			<text id="(JPA / SQL)" style="transform: matrix(1,0,0,1,119,542.65)" >
+				<tspan x="-26" y="0" class="t9">(JPA / SQL)
+</tspan>
+			</text>
+		</g>
+		<g id="edge5">
+			<text id="CRUD (JPA) → Banco de Dados" style="transform: matrix(1,0,0,1,257.3,500.45)" >
+				<tspan x="-75.6" y="0" class="t3">CRUD (JPA) → Banco de Dados
+</tspan>
+			</text>
+		</g>
+		<g id="node6">
+			<path fill-rule="evenodd" class="s14" d="m376 324.85c-66.24 0-119.78-10.12-119.78-22.63 0-12.51 53.54-22.63 119.78-22.63 66.24 0 119.78 10.12 119.78 22.63 0 12.51-53.54 22.63-119.78 22.63z"/>
+			<text id="Integrações" style="transform: matrix(1,0,0,1,376,299.22)" >
+				<tspan x="-26.1" y="0" class="t9">Integrações
+</tspan>
+			</text>
+			<text id="(AnaliseIntegration - cliente HTTP)" style="transform: matrix(1,0,0,1,376,311.22)" >
+				<tspan x="-76.7" y="0" class="t9">(AnaliseIntegration - cliente HTTP)
+</tspan>
+			</text>
+		</g>
+		<g id="edge7">
+			<path class="s16" d="m264.13 227.64c20.05 13.19 47.7 31.38 70.5 46.37"/>
+			<path fill-rule="evenodd" class="s17" d="m336.37 270.97l6.43 8.42-10.28-2.58 3.85-5.84z"/>
+			<text id="Invoca Cliente de Integração" style="transform: matrix(1,0,0,1,372.26,200.4)" >
+				<tspan x="-71.9" y="0" class="t3">Invoca Cliente de Integração
+</tspan>
+			</text>
+		</g>
+		<g id="node7">
+			<path fill-rule="evenodd" class="s18" d="m648.41 402.05h-128.82v36h128.82v-36z"/>
+			<text id="Azure Functions (Python)" style="transform: matrix(1,0,0,1,584,417.05)" >
+				<tspan x="-56.4" y="0" class="t9">Azure Functions (Python)
+</tspan>
+			</text>
+			<text id="(analiseapi)" style="transform: matrix(1,0,0,1,584,429.05)" >
+				<tspan x="-25.8" y="0" class="t9">(analiseapi)
+</tspan>
+			</text>
+		</g>
+		<g id="edge2">
+			<text id="HTTP / REST" style="transform: matrix(1,0,0,1,558.5,333.02)" >
+				<tspan x="-30.5" y="0" class="t3">HTTP / REST
+</tspan>
+			</text>
+			<text id="(analisar-transacao)" style="transform: matrix(1,0,0,1,563.5,346.82)" >
+				<tspan x="-50" y="0" class="t3">(analisar-transacao)
+</tspan>
+			</text>
+		</g>
+		<g id="node4">
+			<path fill-rule="evenodd" class="s14" d="m208.42 402.05l-3-4h-21l-3 4h-151.84v36h178.84v-36z"/>
+			<text id="Serviços" style="transform: matrix(1,0,0,1,119,417.05)" >
+				<tspan x="-19.2" y="0" class="t9">Serviços
+</tspan>
+			</text>
+			<text id="(TransacoesService, ContasService)" style="transform: matrix(1,0,0,1,119,429.05)" >
+				<tspan x="-81.2" y="0" class="t9">(TransacoesService, ContasService)
+</tspan>
+			</text>
+		</g>
+		<g id="edge10">
+			<path class="s4" d="m114.02 320.56c-2.35 21.84-2.36 59.14-0.02 81.03"/>
+		</g>
+		<g id="edge13">
+			<path class="s15" d="m123.98 320.56c2.35 21.84 2.36 59.14 0.02 81.03"/>
+		</g>
+		<g id="edge11">
+			<path class="s4" d="m113.94 438.49c-2.13 19.74-2.25 51.89-0.36 73.04"/>
+		</g>
+		<g id="edge14">
+			<path class="s15" d="m124.06 438.49c2.13 19.74 2.25 51.89 0.36 73.04"/>
+		</g>
+		<g id="node11">
+			<path class="s19" d="m182.03 596.65c0-2.21-28.25-4-63.03-4-34.78 0-63.03 1.79-63.03 4v36c0 2.21 28.25 4 63.03 4 34.78 0 63.03-1.79 63.03-4z"/>
+			<path class="s20" d="m182.03 596.65c0 2.21-28.25 4-63.03 4-34.78 0-63.03-1.79-63.03-4"/>
+			<text id="Banco de Dados (SQL)" style="transform: matrix(1,0,0,1,119,611.65)" >
+				<tspan x="-51.7" y="0" class="t9">Banco de Dados (SQL)
+</tspan>
+			</text>
+			<text id="(PostgreSQL)" style="transform: matrix(1,0,0,1,119,623.65)" >
+				<tspan x="-30.6" y="0" class="t9">(</tspan><tspan  y="0" class="t9">P</tspan><tspan  y="0" class="t9">o</tspan><tspan  y="0" class="t9">s</tspan><tspan  y="0" class="t9">t</tspan><tspan  y="0" class="t9">g</tspan><tspan  y="0" class="t9">r</tspan><tspan  y="0" class="t9">e</tspan><tspan  y="0" class="t9">S</tspan><tspan  y="0" class="t9">Q</tspan><tspan  y="0" class="t9">L</tspan><tspan  y="0" class="t9">)
+</tspan>
+			</text>
+		</g>
+		<g id="edge6">
+			<path class="s21" d="m119 555.82c0 11.34 0 25.26 0 36.6"/>
+		</g>
+		<g id="edge8">
+			<path class="s16" d="m406.04 324.41c18.15 11.91 42.16 26.17 65.24 35.24 15.54 6.11 21.37 1.43 36.72 8 15.91 6.81 32 17.1 45.25 26.68"/>
+			<path fill-rule="evenodd" class="s17" d="m555.23 391.44l5.92 8.78-10.11-3.17 4.19-5.61z"/>
+		</g>
+		<g id="node9">
+			<path fill-rule="evenodd" class="s22" d="m655.53 511.65h-135.06v44h141.06v-38l-6-6z"/>
+			<path fill-rule="evenodd" class="s15" d="m655.53 511.65v6"/>
+			<path fill-rule="evenodd" class="s15" d="m661.53 517.65h-6"/>
+			<text id="Modelos &amp; Artefatos ML" style="transform: matrix(1,0,0,1,591,524.65)" >
+				<tspan x="-53.1" y="0" class="t9">Modelos &amp; Artefatos ML
+</tspan>
+			</text>
+			<text id="(Keras, TensorFlow)" style="transform: matrix(1,0,0,1,591,536.65)" >
+				<tspan x="-44.6" y="0" class="t9">(Keras, TensorFlow)
+</tspan>
+			</text>
+			<text id="(application/model_artifacts)" style="transform: matrix(1,0,0,1,591,548.65)" >
+				<tspan x="-62.5" y="0" class="t9">(application/model_artifacts)
+</tspan>
+			</text>
+		</g>
+		<g id="edge3">
+			<path class="s23" d="m556.31 438.72c-6.87 5.88-13.33 13.07-17.09 21.33-6.19 13.59-6.67 20.24 0 33.6 1.68 3.37 3.81 6.53 6.24 9.47"/>
+			<path fill-rule="evenodd" class="s24" d="m547.92 500.64l4.52 9.58-9.51-4.67 4.99-4.91z"/>
+			<text id="Carrega Modelos / Artefatos" style="transform: matrix(1,0,0,1,619.11,472.65)" >
+				<tspan x="-69.9" y="0" class="t3">Carrega Modelos / Artefatos
+</tspan>
+			</text>
+			<text id="(Keras, TensorFlow)" style="transform: matrix(1,0,0,1,619.11,489.45)" >
+				<tspan x="-48.5" y="0" class="t3">(Keras, TensorFlow)
+</tspan>
+			</text>
+		</g>
+		<g id="node10">
+			<path fill-rule="evenodd" class="s22" d="m788.13 511.65h-108.26v44h108.26v-44z"/>
+			<text id="Classes de Domínio" style="transform: matrix(1,0,0,1,734,524.65)" >
+				<tspan x="-44.7" y="0" class="t9">Classes de Domínio
+</tspan>
+			</text>
+			<text id="(Keras, TensorFlow)" style="transform: matrix(1,0,0,1,734,536.65)" >
+				<tspan x="-44.6" y="0" class="t9">(Keras, TensorFlow)
+</tspan>
+			</text>
+			<text id="(application/models)" style="transform: matrix(1,0,0,1,734,548.65)" >
+				<tspan x="-44.7" y="0" class="t9">(application/models)
+</tspan>
+			</text>
+		</g>
+		<g id="edge4">
+			<path class="s23" d="m649.32 433.41c17.65 5.8 35.71 14.28 49.68 26.64 12.07 10.68 20.37 26.45 25.84 40.57"/>
+			<path fill-rule="evenodd" class="s24" d="m728.13 499.43l0.01 10.6-6.61-8.28 6.6-2.32z"/>
+			<text id="Utiliza Classes de Domínio" style="transform: matrix(1,0,0,1,799.56,472.65)" >
+				<tspan x="-66.1" y="0" class="t3">Utiliza Classes de Domínio
+</tspan>
+			</text>
+			<text id="(Keras, TensorFlow)" style="transform: matrix(1,0,0,1,799.56,489.45)" >
+				<tspan x="-48.5" y="0" class="t3">(Keras, TensorFlow)
+</tspan>
+			</text>
+		</g>
+		<g id="node8">
+			<path fill-rule="evenodd" class="s22" d="m826.96 398.05l-3-4h-21l-3 4h-82.92v44h109.92v-44z"/>
+			<text id="Serviços de ML" style="transform: matrix(1,0,0,1,772,411.05)" >
+				<tspan x="-34.5" y="0" class="t9">Serviços de ML
+</tspan>
+			</text>
+			<text id="(application/services)" style="transform: matrix(1,0,0,1,772,423.05)" >
+				<tspan x="-47" y="0" class="t9">(application/services)
+</tspan>
+			</text>
+			<text id="analise_service.py" style="transform: matrix(1,0,0,1,772,435.05)" >
+				<tspan x="-41.1" y="0" class="t9">analise_service.py
+</tspan>
+			</text>
+		</g>
+	</g>
+</svg>
