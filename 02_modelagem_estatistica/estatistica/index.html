@@ -1140,29 +1140,29 @@ N_{pj} = \max\Big(1, \Big\lfloor \frac{V_{pj\_anual} \cdot f_{escala}}{T_{espera
 <tbody>
 <tr>
 <td style="text-align: left;"><span class="arithmatex">\(V_{pf\_anual}\)</span> ou <span class="arithmatex">\(V_{pj\_anual}\)</span></td>
-<td style="text-align: left;">[cite_start]Volume anual de transações por PF ou PJ (dado empírico vindo do BACEN). [cite: 208]</td>
+<td style="text-align: left;">Volume anual de transações por PF ou PJ (dado empírico vindo do BACEN). [cite: 208]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span class="arithmatex">\(f_{escala}\)</span></td>
-<td style="text-align: left;">[cite_start]Parâmetro de escala definido por uma porcentagem. [cite: 209]</td>
+<td style="text-align: left;">Parâmetro de escala definido por uma porcentagem. [cite: 209]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><span class="arithmatex">\(T_{esperado}\)</span></td>
-<td style="text-align: left;">[cite_start]Suposição sobre a <strong>atividade esperada</strong> do cliente (transações por mês). [cite: 210, 220]</td>
+<td style="text-align: left;">Suposição sobre a <strong>atividade esperada</strong> do cliente (transações por mês). [cite: 210, 220]</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Nota sobre <span class="arithmatex">\(T_{esperado}\)</span>:</strong> Se diminuir o valor esperado (<span class="arithmatex">\(T_{esperado}\)</span>), mais clientes precisam ser gerados para manter o volume total, resultando em uma Atividade Média Real <strong>MENOR</strong> por cliente. [cite_start]Se aumentar o valor, menos clientes são gerados, resultando em Atividade Média Real <strong>MAIOR</strong>. [cite: 211-219]</p>
+<p><strong>Nota sobre <span class="arithmatex">\(T_{esperado}\)</span>:</strong> Se diminuir o valor esperado (<span class="arithmatex">\(T_{esperado}\)</span>), mais clientes precisam ser gerados para manter o volume total, resultando em uma Atividade Média Real <strong>MENOR</strong> por cliente. Se aumentar o valor, menos clientes são gerados, resultando em Atividade Média Real <strong>MAIOR</strong>. [cite: 211-219]</p>
 </blockquote>
 <h3 id="12-volume-mensal-de-transacoes">1.2. Volume Mensal de Transações<a class="headerlink" href="#12-volume-mensal-de-transacoes" title="Permanent link">&para;</a></h3>
-<p>[cite_start]O volume de eventos (transação) a ser gerado é um escalonamento determinado dos dados empíricos. [cite: 225]</p>
+<p>O volume de eventos (transação) a ser gerado é um escalonamento determinado dos dados empíricos. [cite: 225]</p>
 <div class="arithmatex">\[
 V_{mensal} = \lfloor V_{mensal\_original} \cdot f_{escala} \rfloor
 \]</div>
 <hr />
 <h2 id="2-modelagem-estatistica-de-agentes-clientes-e-contas">2. Modelagem Estatística de Agentes (Clientes e Contas)<a class="headerlink" href="#2-modelagem-estatistica-de-agentes-clientes-e-contas" title="Permanent link">&para;</a></h2>
-<p>[cite_start]As características dos agentes são modeladas como variáveis aleatórias seguindo regras estatísticas para simular um comportamento realista. [cite: 227]</p>
+<p>As características dos agentes são modeladas como variáveis aleatórias seguindo regras estatísticas para simular um comportamento realista. [cite: 227]</p>
 <h3 id="21-idade-e-tempo-de-fundacao-uniforme-continua">2.1. Idade e Tempo de Fundação (Uniforme Contínua)<a class="headerlink" href="#21-idade-e-tempo-de-fundacao-uniforme-continua" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1178,39 +1178,39 @@ V_{mensal} = \lfloor V_{mensal\_original} \cdot f_{escala} \rfloor
 <td style="text-align: left;"><strong>Pessoa Física</strong></td>
 <td style="text-align: left;"><span class="arithmatex">\(D_{nasc\,(PF)}\)</span></td>
 <td style="text-align: left;">Uniforme</td>
-<td style="text-align: left;">[cite_start]Entre 18 e 80 anos de idade. [cite: 232, 237, 238]</td>
+<td style="text-align: left;">Entre 18 e 80 anos de idade. [cite: 232, 237, 238]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Pessoa Jurídica</strong></td>
 <td style="text-align: left;"><span class="arithmatex">\(D_{fund\,(PJ)}\)</span></td>
 <td style="text-align: left;">Uniforme</td>
-<td style="text-align: left;">[cite_start]Entre 1 e 20 anos de existência. [cite: 233, 242, 243]</td>
+<td style="text-align: left;">Entre 1 e 20 anos de existência. [cite: 233, 242, 243]</td>
 </tr>
 </tbody>
 </table>
 <h3 id="22-distribuicao-de-contas-uniforme-discreta">2.2. Distribuição de Contas (Uniforme Discreta)<a class="headerlink" href="#22-distribuicao-de-contas-uniforme-discreta" title="Permanent link">&para;</a></h3>
-<p>[cite_start]O número de contas por cliente é condicional à natureza do cliente: [cite: 245]</p>
+<p>O número de contas por cliente é condicional à natureza do cliente: [cite: 245]</p>
 <ul>
-<li>[cite_start]<strong>PF:</strong> <span class="arithmatex">\(N_{contas\,|\,(PF)} \sim U\{1, 2\}\)</span> (1 ou 2 contas, 50% de chance cada). [cite: 246, 248]</li>
-<li>[cite_start]<strong>PJ:</strong> <span class="arithmatex">\(N_{contas\,|\,(PJ)} \sim U\{1, 2, 3, 4, 5\}\)</span> (Entre 1 e 5 contas, 20% de chance cada). [cite: 247, 249]</li>
+<li><strong>PF:</strong> <span class="arithmatex">\(N_{contas\,|\,(PF)} \sim U\{1, 2\}\)</span> (1 ou 2 contas, 50% de chance cada). [cite: 246, 248]</li>
+<li><strong>PJ:</strong> <span class="arithmatex">\(N_{contas\,|\,(PJ)} \sim U\{1, 2, 3, 4, 5\}\)</span> (Entre 1 e 5 contas, 20% de chance cada). [cite: 247, 249]</li>
 </ul>
 <h3 id="23-risco-da-conta-bernoulli">2.3. Risco da Conta (Bernoulli)<a class="headerlink" href="#23-risco-da-conta-bernoulli" title="Permanent link">&para;</a></h3>
-<p>[cite_start]O perfil de risco (<span class="arithmatex">\(R\)</span>) é a primeira característica definida e determina se a conta será classificada como "Alto Risco" ou "Risco Normal". [cite: 287, 288]</p>
+<p>O perfil de risco (<span class="arithmatex">\(R\)</span>) é a primeira característica definida e determina se a conta será classificada como "Alto Risco" ou "Risco Normal". [cite: 287, 288]</p>
 <div class="arithmatex">\[
 R \sim \text{Bernoulli}(p_{risco})
 \]</div>
 <ul>
-<li>[cite_start]<span class="arithmatex">\(R=1\)</span> (Alto Risco) ou <span class="arithmatex">\(R=0\)</span> (Risco Normal). [cite: 291]</li>
-<li>[cite_start]<span class="arithmatex">\(p_{risco}\)</span> é a probabilidade de sucesso (Alto Risco), definida pela variável <code>PROB_CONTA_ALTO_RISCO</code> (ex: 0.03). [cite: 292]</li>
+<li><span class="arithmatex">\(R=1\)</span> (Alto Risco) ou <span class="arithmatex">\(R=0\)</span> (Risco Normal). [cite: 291]</li>
+<li><span class="arithmatex">\(p_{risco}\)</span> é a probabilidade de sucesso (Alto Risco), definida pela variável <code>PROB_CONTA_ALTO_RISCO</code> (ex: 0.03). [cite: 292]</li>
 </ul>
 <h3 id="24-data-de-abertura-condicional">2.4. Data de Abertura Condicional<a class="headerlink" href="#24-data-de-abertura-condicional" title="Permanent link">&para;</a></h3>
-<p>[cite_start]A data de abertura da conta (<span class="arithmatex">\(D_{abertura}\)</span>) é amostrada de forma estritamente <strong>condicional ao Risco da Conta (<span class="arithmatex">\(R\)</span>)</strong>: [cite: 313]</p>
+<p>A data de abertura da conta (<span class="arithmatex">\(D_{abertura}\)</span>) é amostrada de forma estritamente <strong>condicional ao Risco da Conta (<span class="arithmatex">\(R\)</span>)</strong>: [cite: 313]</p>
 <ul>
-<li>[cite_start]<strong>Alto Risco (<span class="arithmatex">\(R=1\)</span>):</strong> Contas são <strong>forçadas a serem recentes</strong> (criadas nos últimos 6 meses). [cite: 325, 326]</li>
-<li>[cite_start]<strong>Risco Normal (<span class="arithmatex">\(R=0\)</span>):</strong> Contas podem ser significativamente mais antigas (até 10 anos). [cite: 323, 327]</li>
+<li><strong>Alto Risco (<span class="arithmatex">\(R=1\)</span>):</strong> Contas são <strong>forçadas a serem recentes</strong> (criadas nos últimos 6 meses). [cite: 325, 326]</li>
+<li><strong>Risco Normal (<span class="arithmatex">\(R=0\)</span>):</strong> Contas podem ser significativamente mais antigas (até 10 anos). [cite: 323, 327]</li>
 </ul>
 <h3 id="25-saldo-inicial-da-conta-log-normal">2.5. Saldo Inicial da Conta (Log-Normal)<a class="headerlink" href="#25-saldo-inicial-da-conta-log-normal" title="Permanent link">&para;</a></h3>
-<p>[cite_start]O saldo inicial (<span class="arithmatex">\(S_{conta}\)</span>) é modelado usando a <strong>Distribuição Log-Normal</strong>. [cite: 329] [cite_start]Os parâmetros são definidos condicionalmente à natureza do cliente para simular saldos mais altos para PJ. [cite: 332, 340]</p>
+<p>O saldo inicial (<span class="arithmatex">\(S_{conta}\)</span>) é modelado usando a <strong>Distribuição Log-Normal</strong>. [cite: 329] Os parâmetros são definidos condicionalmente à natureza do cliente para simular saldos mais altos para PJ. [cite: 332, 340]</p>
 <table>
 <thead>
 <tr>
@@ -1222,20 +1222,20 @@ R \sim \text{Bernoulli}(p_{risco})
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Pessoa Física (PF)</strong></td>
-<td style="text-align: left;">[cite_start]6.0 [cite: 334]</td>
-<td style="text-align: left;">[cite_start]1.5 [cite: 335]</td>
+<td style="text-align: left;">6.0 [cite: 334]</td>
+<td style="text-align: left;">1.5 [cite: 335]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Pessoa Jurídica (PJ)</strong></td>
-<td style="text-align: left;">[cite_start]9.0 [cite: 337]</td>
-<td style="text-align: left;">[cite_start]1.8 [cite: 338]</td>
+<td style="text-align: left;">9.0 [cite: 337]</td>
+<td style="text-align: left;">1.8 [cite: 338]</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="3-modelagem-de-fraudes-e-eventos">3. Modelagem de Fraudes e Eventos<a class="headerlink" href="#3-modelagem-de-fraudes-e-eventos" title="Permanent link">&para;</a></h2>
 <h3 id="31-valor-da-transacao-modelo-de-mistura">3.1. Valor da Transação (Modelo de Mistura)<a class="headerlink" href="#31-valor-da-transacao-modelo-de-mistura" title="Permanent link">&para;</a></h3>
-<p>[cite_start]O valor final da transação (<span class="arithmatex">\(V_{tx}\)</span>) é o produto do <strong>Valor Base</strong> (<span class="arithmatex">\(V_{base} \sim \text{Log-Normal}\)</span>) e um <strong>Multiplicador</strong> (<span class="arithmatex">\(M\)</span>). [cite: 384, 385]</p>
+<p>O valor final da transação (<span class="arithmatex">\(V_{tx}\)</span>) é o produto do <strong>Valor Base</strong> (<span class="arithmatex">\(V_{base} \sim \text{Log-Normal}\)</span>) e um <strong>Multiplicador</strong> (<span class="arithmatex">\(M\)</span>). [cite: 384, 385]</p>
 <table>
 <thead>
 <tr>
@@ -1248,30 +1248,30 @@ R \sim \text{Bernoulli}(p_{risco})
 <tr>
 <td style="text-align: left;"><strong>Normal</strong></td>
 <td style="text-align: left;"><span class="arithmatex">\(M = 1\)</span></td>
-<td style="text-align: left;">[cite_start]O valor base não muda. [cite: 391]</td>
+<td style="text-align: left;">O valor base não muda. [cite: 391]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Outlier Legítimo</strong></td>
 <td style="text-align: left;"><span class="arithmatex">\(M = 2.5\)</span> (Fixo)</td>
-<td style="text-align: left;">[cite_start]Ocorre com probabilidade de 4% (<span class="arithmatex">\(\neg\)</span> Fraude). [cite: 392, 397]</td>
+<td style="text-align: left;">Ocorre com probabilidade de 4% (<span class="arithmatex">\(\neg\)</span> Fraude). [cite: 392, 397]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Fraude</strong></td>
 <td style="text-align: left;"><span class="arithmatex">\(M = 30\)</span> (Fixo, Alto)</td>
-<td style="text-align: left;">[cite_start]Valor significativamente maior que o normal. [cite: 398, 399]</td>
+<td style="text-align: left;">Valor significativamente maior que o normal. [cite: 398, 399]</td>
 </tr>
 </tbody>
 </table>
 <h3 id="32-logica-sequencial-condicional-de-fraude-ptextfraude">3.2. Lógica Sequencial Condicional de Fraude (<span class="arithmatex">\(P(\text{Fraude})\)</span>)<a class="headerlink" href="#32-logica-sequencial-condicional-de-fraude-ptextfraude" title="Permanent link">&para;</a></h3>
-<p>[cite_start]A <strong>Probabilidade de Fraude</strong> (<span class="arithmatex">\(P(\text{Fraude})\)</span>) é determinada por uma <strong>lógica sequencial e condicional</strong> baseada em prioridade de risco: [cite: 429]</p>
+<p>A <strong>Probabilidade de Fraude</strong> (<span class="arithmatex">\(P(\text{Fraude})\)</span>) é determinada por uma <strong>lógica sequencial e condicional</strong> baseada em prioridade de risco: [cite: 429]</p>
 <ul>
-<li>[cite_start]<strong>Prioridade 1 (Máxima):</strong> Se o pagador for um <strong>Alvo Vulnerável</strong> (<span class="arithmatex">\(A\)</span>: PF <span class="arithmatex">\(\geq 55\)</span> anos), <span class="arithmatex">\(p_{alvo}=0.80\)</span>. [cite: 423, 424]</li>
-<li>[cite_start]<strong>Prioridade 2:</strong> Se não for Alvo Vulnerável (<span class="arithmatex">\(\neg A\)</span>) e o destino for <strong>Alto Risco</strong> (<span class="arithmatex">\(R\)</span>), <span class="arithmatex">\(p_{risco}=0.60\)</span>. [cite: 425]</li>
-<li>[cite_start]<strong>Prioridade 3:</strong> Se <span class="arithmatex">\(\neg A\)</span>, <span class="arithmatex">\(\neg R\)</span> e a <strong>Chave PIX for Recente</strong> (<span class="arithmatex">\(C\)</span>), <span class="arithmatex">\(p_{recente}=0.40\)</span>. [cite: 426, 427]</li>
-<li>[cite_start]<strong>Prioridade 4 (Base):</strong> Se nenhuma condição de risco for atendida, <span class="arithmatex">\(p_{base}=0.35\)</span>. [cite: 428]</li>
+<li><strong>Prioridade 1 (Máxima):</strong> Se o pagador for um <strong>Alvo Vulnerável</strong> (<span class="arithmatex">\(A\)</span>: PF <span class="arithmatex">\(\geq 55\)</span> anos), <span class="arithmatex">\(p_{alvo}=0.80\)</span>. [cite: 423, 424]</li>
+<li><strong>Prioridade 2:</strong> Se não for Alvo Vulnerável (<span class="arithmatex">\(\neg A\)</span>) e o destino for <strong>Alto Risco</strong> (<span class="arithmatex">\(R\)</span>), <span class="arithmatex">\(p_{risco}=0.60\)</span>. [cite: 425]</li>
+<li><strong>Prioridade 3:</strong> Se <span class="arithmatex">\(\neg A\)</span>, <span class="arithmatex">\(\neg R\)</span> e a <strong>Chave PIX for Recente</strong> (<span class="arithmatex">\(C\)</span>), <span class="arithmatex">\(p_{recente}=0.40\)</span>. [cite: 426, 427]</li>
+<li><strong>Prioridade 4 (Base):</strong> Se nenhuma condição de risco for atendida, <span class="arithmatex">\(p_{base}=0.35\)</span>. [cite: 428]</li>
 </ul>
 <h3 id="33-padroes-comportamentais-injetados">3.3. Padrões Comportamentais Injetados<a class="headerlink" href="#33-padroes-comportamentais-injetados" title="Permanent link">&para;</a></h3>
-<p>[cite_start]Uma vez rotulada como fraude (<span class="arithmatex">\(F=1\)</span>), a transação é classificada em um tipo, o que desencadeia padrões específicos: [cite: 467]</p>
+<p>Uma vez rotulada como fraude (<span class="arithmatex">\(F=1\)</span>), a transação é classificada em um tipo, o que desencadeia padrões específicos: [cite: 467]</p>
 <table>
 <thead>
 <tr>
@@ -1283,35 +1283,35 @@ R \sim \text{Bernoulli}(p_{risco})
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Engenharia Social</strong></td>
-<td style="text-align: left;">[cite_start]Fraude de alto valor com <span class="arithmatex">\(p_{alvo}\)</span>. [cite: 472]</td>
-<td style="text-align: left;">[cite_start]Condição <span class="arithmatex">\(A\)</span>. [cite: 472]</td>
+<td style="text-align: left;">Fraude de alto valor com <span class="arithmatex">\(p_{alvo}\)</span>. [cite: 472]</td>
+<td style="text-align: left;">Condição <span class="arithmatex">\(A\)</span>. [cite: 472]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Ataque de Madrugada</strong></td>
-<td style="text-align: left;">[cite_start]Horário forçado para <span class="arithmatex">\(H_{tx} \sim U\{1, 2, 3, 4\}\)</span> (1h-4h). [cite: 472]</td>
-<td style="text-align: left;">[cite_start]Uniforme Discreta. [cite: 472]</td>
+<td style="text-align: left;">Horário forçado para <span class="arithmatex">\(H_{tx} \sim U\{1, 2, 3, 4\}\)</span> (1h-4h). [cite: 472]</td>
+<td style="text-align: left;">Uniforme Discreta. [cite: 472]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Teste de Conta</strong></td>
-<td style="text-align: left;">[cite_start]Transação prévia de <strong>baixo valor</strong> (<span class="arithmatex">\(\sim U[0.01, 1.00]\)</span>) com pequeno <em>delay</em>. [cite: 472]</td>
-<td style="text-align: left;">[cite_start]Uniforme Contínua/Discreta. [cite: 472]</td>
+<td style="text-align: left;">Transação prévia de <strong>baixo valor</strong> (<span class="arithmatex">\(\sim U[0.01, 1.00]\)</span>) com pequeno <em>delay</em>. [cite: 472]</td>
+<td style="text-align: left;">Uniforme Contínua/Discreta. [cite: 472]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Abaixo do Radar</strong></td>
-<td style="text-align: left;">[cite_start]Valor <strong>substituído</strong> por valores discretos (ex: 999.90, 1999.90). [cite: 527, 528]</td>
-<td style="text-align: left;">[cite_start]Uniforme Discreta de valores-limite. [cite: 531]</td>
+<td style="text-align: left;">Valor <strong>substituído</strong> por valores discretos (ex: 999.90, 1999.90). [cite: 527, 528]</td>
+<td style="text-align: left;">Uniforme Discreta de valores-limite. [cite: 531]</td>
 </tr>
 </tbody>
 </table>
 <h3 id="34-fraudes-em-cadeia-topologia-e-grafos">3.4. Fraudes em Cadeia (Topologia e Grafos)<a class="headerlink" href="#34-fraudes-em-cadeia-topologia-e-grafos" title="Permanent link">&para;</a></h3>
-<p>[cite_start]As fraudes em cadeia são modeladas como <strong>processos estocásticos em grafo</strong> para camuflar o movimento de fundos. [cite: 484]</p>
+<p>As fraudes em cadeia são modeladas como <strong>processos estocásticos em grafo</strong> para camuflar o movimento de fundos. [cite: 484]</p>
 <ul>
-<li>[cite_start]<strong>Triangulação (Fan-Out):</strong> Fragmentação do valor (divisão) para múltiplos nós sucessores. [cite: 486, 502] [cite_start]A divisão é feita via <strong>Distribuição de Dirichlet</strong>. [cite: 503]</li>
-<li>[cite_start]<strong>Consolidação (Fan-In):</strong> Convergência de múltiplas arestas (origens <span class="arithmatex">\(N_{fontes} \sim U[10, 30]\)</span>) em um único nó destino em uma janela de tempo curta (<span class="arithmatex">\(\Delta_{segundos} \sim U[1, 600]\)</span> segundos). [cite: 504, 506]</li>
+<li><strong>Triangulação (Fan-Out):</strong> Fragmentação do valor (divisão) para múltiplos nós sucessores. [cite: 486, 502] A divisão é feita via <strong>Distribuição de Dirichlet</strong>. [cite: 503]</li>
+<li><strong>Consolidação (Fan-In):</strong> Convergência de múltiplas arestas (origens <span class="arithmatex">\(N_{fontes} \sim U[10, 30]\)</span>) em um único nó destino em uma janela de tempo curta (<span class="arithmatex">\(\Delta_{segundos} \sim U[1, 600]\)</span> segundos). [cite: 504, 506]</li>
 </ul>
 <hr />
 <h2 id="4-modelo-de-dados-de-saida-tabelas-delta">4. Modelo de Dados de Saída (Tabelas Delta)<a class="headerlink" href="#4-modelo-de-dados-de-saida-tabelas-delta" title="Permanent link">&para;</a></h2>
-<p>[cite_start]O <em>pipeline</em> gera quatro tabelas Delta principais para materializar os agentes e eventos, armazenadas no <em>database</em> <code>transacoes_db.copper</code>. [cite: 561, 562]</p>
+<p>O <em>pipeline</em> gera quatro tabelas Delta principais para materializar os agentes e eventos, armazenadas no <em>database</em> <code>transacoes_db.copper</code>. [cite: 561, 562]</p>
 <table>
 <thead>
 <tr>
@@ -1323,23 +1323,23 @@ R \sim \text{Bernoulli}(p_{risco})
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>1. <code>clientes</code></strong></td>
-<td style="text-align: left;">[cite_start]População de agentes PF e PJ. [cite: 564]</td>
-<td style="text-align: left;">[cite_start]<code>nascido_em</code> (para lógica de Alvo Vulnerável). [cite: 576]</td>
+<td style="text-align: left;">População de agentes PF e PJ. [cite: 564]</td>
+<td style="text-align: left;"><code>nascido_em</code> (para lógica de Alvo Vulnerável). [cite: 576]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>2. <code>contas</code></strong></td>
-<td style="text-align: left;">[cite_start]Contas bancárias. [cite: 580]</td>
-<td style="text-align: left;">[cite_start]<code>is_high_risk</code>, <code>saldo</code>, <code>aberta_em</code>. [cite: 581, 587, 588, 589]</td>
+<td style="text-align: left;">Contas bancárias. [cite: 580]</td>
+<td style="text-align: left;"><code>is_high_risk</code>, <code>saldo</code>, <code>aberta_em</code>. [cite: 581, 587, 588, 589]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>3. <code>chaves_pix</code></strong></td>
-<td style="text-align: left;">[cite_start]Chaves associadas a contas. [cite: 595]</td>
-<td style="text-align: left;">[cite_start]<code>cadastrada_em</code> (para lógica de Chave Recente). [cite: 605]</td>
+<td style="text-align: left;">Chaves associadas a contas. [cite: 595]</td>
+<td style="text-align: left;"><code>cadastrada_em</code> (para lógica de Chave Recente). [cite: 605]</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>4. <code>transacoes</code></strong></td>
-<td style="text-align: left;">[cite_start]Eventos PIX (Legítimas e Fraudulentas). [cite: 607]</td>
-<td style="text-align: left;">[cite_start]<code>is_fraud</code>, <code>fraud_type</code>, <code>valor</code>, <code>data</code>, <code>id_transacao_cadeia_pai</code> (para análise de grafo). [cite: 616, 617, 618, 619, 620]</td>
+<td style="text-align: left;">Eventos PIX (Legítimas e Fraudulentas). [cite: 607]</td>
+<td style="text-align: left;"><code>is_fraud</code>, <code>fraud_type</code>, <code>valor</code>, <code>data</code>, <code>id_transacao_cadeia_pai</code> (para análise de grafo). [cite: 616, 617, 618, 619, 620]</td>
 </tr>
 </tbody>
 </table>
@@ -1357,42 +1357,42 @@ R \sim \text{Bernoulli}(p_{risco})
 <tr>
 <td style="text-align: left;">Prob. Conta de Risco (<span class="arithmatex">\(p_{risco}\)</span>)</td>
 <td style="text-align: left;"><code>PROB_CONTA_ALTO_RISCO</code></td>
-<td style="text-align: left;">[cite_start]<strong>0.05</strong> [cite: 631]</td>
+<td style="text-align: left;"><strong>0.05</strong> [cite: 631]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Dias Chave (Alto Risco)</td>
 <td style="text-align: left;"><code>MAX_DIAS_CADASTRO_CHAVE_RISCO</code></td>
-<td style="text-align: left;">[cite_start]<strong>7</strong> [cite: 631]</td>
+<td style="text-align: left;"><strong>7</strong> [cite: 631]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Saldo PF (<span class="arithmatex">\(\mu\)</span>)</td>
 <td style="text-align: left;"><code>SALDO_PF_MEAN</code></td>
-<td style="text-align: left;">[cite_start]6.0 [cite: 631]</td>
+<td style="text-align: left;">6.0 [cite: 631]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Multiplicador Fraude (<span class="arithmatex">\(M\)</span>)</td>
 <td style="text-align: left;"><code>MULTIPLICADOR_MAGNITUDE_FRAUDE</code></td>
-<td style="text-align: left;">[cite_start]<strong>30.0</strong> [cite: 633]</td>
+<td style="text-align: left;"><strong>30.0</strong> [cite: 633]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Prob. Abaixo Radar</td>
 <td style="text-align: left;"><code>PROBABILIDADE_ABAIXO_RADAR</code></td>
-<td style="text-align: left;">[cite_start]0.40 [cite: 633]</td>
+<td style="text-align: left;">0.40 [cite: 633]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Prob. Fraude (Alvo <span class="arithmatex">\(p_{alvo}\)</span>)</td>
 <td style="text-align: left;"><code>PROBABILIDADE_FRAUDE_ENG_SOCIAL_ALVO</code></td>
-<td style="text-align: left;">[cite_start]<strong>0.80</strong> [cite: 638]</td>
+<td style="text-align: left;"><strong>0.80</strong> [cite: 638]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Idade Mínima Alvo (PF)</td>
 <td style="text-align: left;"><code>IDADE_MINIMA_ALVO_ENG_SOCIAL</code></td>
-<td style="text-align: left;">[cite_start]<strong>55</strong> [cite: 638]</td>
+<td style="text-align: left;"><strong>55</strong> [cite: 638]</td>
 </tr>
 <tr>
 <td style="text-align: left;">Profundidade Cadeia (Min/Max)</td>
 <td style="text-align: left;"><code>FANOUT_MIN/MAX_PROFUNDIDADE</code></td>
-<td style="text-align: left;">[cite_start]<strong>(2, 4)</strong> [cite: 638]</td>
+<td style="text-align: left;"><strong>(2, 4)</strong> [cite: 638]</td>
 </tr>
 </tbody>
 </table>
