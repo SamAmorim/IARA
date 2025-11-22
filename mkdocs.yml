@@ -5,14 +5,30 @@ repo_url: https://github.com/SamAmorim/Fraud-Finder-Pix/
 docs_dir: docs 
 
 # ----------------------------------------------------
-# Configura��o do Tema Material (MODO ESCURO)
+# Configuração do Tema Material (CORES BRADESCO + INVERSÃO)
 # ----------------------------------------------------
 theme:
   name: material
+  # --- REMOVIDO: logo: 'assets/icon.svg' ---
   palette:
-    scheme: slate # MODO ESCURO
-    primary: indigo 
-    accent: light blue
+    # 1. Esquema Escuro (Padrão)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate 
+      primary: red 
+      accent: red 
+      toggle:
+        icon: material/brightness-4
+        name: Trocar para tema claro
+        
+    # 2. Esquema Claro (Alternativo)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: red 
+      accent: red 
+      toggle:
+        icon: material/brightness-7
+        name: Trocar para tema escuro
+        
   font:
     text: Roboto
     code: Roboto Mono
@@ -25,47 +41,52 @@ theme:
     - search.suggest 
 
 # ----------------------------------------------------
-# Extens�es e Suporte a LaTeX
+# Extensões e Suporte a LaTeX
 # ----------------------------------------------------
 markdown_extensions:
+  - attr_list 
   - pymdownx.arithmatex:
       generic: true
   - tables
   - admonition
   - toc:
       permalink: true
-      
-# Inclus�o da biblioteca MathJax para renderiza��o de f�rmulas
+
+extra_css:
+  - stylesheets/extra.css 
+
 extra_javascript:
   - javascripts/config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # ----------------------------------------------------
-# INCLUS�O DO �CONE (Favicon)
+# REMOÇÃO DO ÍCONE (Favicon)
 # ----------------------------------------------------
-extra:
-  favicon: 'docs/assets/icon.png' 
+# --- REMOVIDO: extra: favicon: 'assets/icon.svg' ---
+# O bloco 'extra' pode ser removido ou deixado vazio se não houver outros itens.
+# Se for deixar, remova apenas a linha do favicon.
 
 # ----------------------------------------------------
-# Estrutura de Navega��o (T�tulos Simplificados para Estabilidade)
+# ESTRUTURA DE NAVEGAÇÃO
 # ----------------------------------------------------
 nav:
   - Inicio e Proposta: index.md
   
-  - Arquitetura e Stacks:
+  - Arquitetura:
     - Visao Geral do Software: 01_arquitetura/software.md
     - Arquitetura de Cloud: 01_arquitetura/cloud.md
-    - Stacks de Tecnologia: 01_arquitetura/stacks.md
+
+  - Estatistica:    
+    - Modelagem Estatistica: 02_modelagem_estatistica/estatistica.md
+    - Estrutura de Saida: 02_modelagem_estatistica/output.md
     
-  - Modelagem Estatistica:
-    - Geracao de Clientes e Contas: 02_modelagem_estatistica/clientes_contas.md
-    - Geracao de Fraudes Sinteticas: 02_modelagem_estatistica/fraudes_sinteticas.md
-    - Formulas e Variaveis: 02_modelagem_estatistica/formulas_e_variaveis.md
+
+
     
   - Modelos de Inteligencia Artificial:
     - Arquitetura em Cascata: 03_ia_modelos/arquitetura_cascata.md
     - Treinamento e Pipeline: 03_ia_modelos/treinamento_pipeline.md
     
   - Avaliacao e Resultados:
-    - Metricas e Matriz de Confusao: 04_avaliacao/metricas.md
+    - Metricas e Matriz de Confusao: 04_avaliacao/metrica.md
     - Analise de Erros e Vies: 04_avaliacao/analise_erros.md

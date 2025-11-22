@@ -1,0 +1,17 @@
+/* docs/stylesheets/extra.css */
+
+/* 1. Inverte cores para IMAGENS NO CONTE�DO (index.md) */
+[data-md-color-scheme="slate"] img {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* 2. FOR�A O LOGO DO CABE�ALHO A SER SEMPRE BRANCO (#FFFFFF) */
+/* Usa o seletor universal (*) para atingir todos os elementos SVG dentro do logo. */
+.md-header__button.md-logo * {
+    fill: #FFFFFF !important; 
+}
+
+/* 3. Garante que o container do logo n�o aplique filtros de cor */
+.md-header__button.md-logo {
+    filter: none;
+}
