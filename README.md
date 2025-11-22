@@ -1,4 +1,4 @@
-# 🚀 Detecção de Fraudes PIX com Inteligência Artificial
+# IARA - Inteligência Antifraude e Risco automátiCA
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 ![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0--dev-blue)
