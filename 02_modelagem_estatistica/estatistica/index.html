@@ -1303,6 +1303,7 @@ P(F)=\begin{cases}p_{alvo}&amp;se~A\\ p_{risco}&amp;se\neg A~e~R\\ p_{recente}&a
 * <strong>Filtro de Alvo (<span class="arithmatex">\(A\)</span>):</strong> Apenas pagadores com <code>Idade</code> <span class="arithmatex">\(\ge 55\)</span> anos.
 * <strong>Probabilidade:</strong> Altíssima prioridade na árvore de decisão (<span class="arithmatex">\(P=0.80\)</span>).
 * <strong>Comportamento:</strong> Transações de valor moderado a alto, sem padrão de horário noturno forçado.</p>
+<p><img alt="alt text" src="../imgs/idade_vitimas_eng_social.png" /></p>
 <h4 id="62-ataque-de-madrugada-automacao">6.2. Ataque de Madrugada (Automação)<a class="headerlink" href="#62-ataque-de-madrugada-automacao" title="Permanent link">&para;</a></h4>
 <p>Simula invasão de conta ou coação noturna.
 * <strong>Trigger:</strong> Probabilidade condicional <span class="arithmatex">\(P_{madrugada} = 0.70\)</span> (dado que é fraude).
@@ -1316,6 +1317,7 @@ P(F)=\begin{cases}p_{alvo}&amp;se~A\\ p_{risco}&amp;se\neg A~e~R\\ p_{recente}&a
 * <strong>Latência:</strong> Ocorre minutos antes da transação principal.
     <span class="arithmatex">\(<span class="arithmatex">\(\Delta t \sim \mathcal{U}\{1, \dots, 5\} \text{ minutos}\)</span>\)</span></p>
 <hr />
+<p><img alt="alt text" src="../imgs/valores_tipo_fraude.png" /></p>
 <p><img alt="alt text" src="../imgs/Valores.png" /></p>
 <h3 id="7-hiperparametros-de-simulacao-configuracao-global">7. Hiperparâmetros de Simulação (Configuração Global)<a class="headerlink" href="#7-hiperparametros-de-simulacao-configuracao-global" title="Permanent link">&para;</a></h3>
 <p>A estabilidade estatística do universo sintético é controlada por um conjunto de constantes globais (hiperparâmetros).</p>
