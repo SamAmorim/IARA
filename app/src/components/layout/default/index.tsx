@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box"
 import Header from "components/header"
+import PixContextProvider from "components/providers/pix/PixProvider"
 import { Outlet } from "react-router"
 
 export default function DefaultLayout() {
@@ -11,7 +12,9 @@ export default function DefaultLayout() {
                 component="main"
                 className="flex-1 w-full md:max-w-md mx-auto overflow-auto"
             >
-                <Outlet />
+                <PixContextProvider>
+                    <Outlet />
+                </PixContextProvider>
             </Box>
         </Box>
     )

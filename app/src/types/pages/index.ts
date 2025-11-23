@@ -1,4 +1,4 @@
-import type { UIMatch } from "react-router";
+import type { UIMatch } from "react-router"
 
 export interface RouteLoaderData {
     pageTitle: string
@@ -6,6 +6,7 @@ export interface RouteLoaderData {
 
 export interface RouteHandle {
     title: string | ((data: RouteLoaderData) => string)
+    showBackButton?: boolean
 }
 
 export interface RouteMatch extends UIMatch {

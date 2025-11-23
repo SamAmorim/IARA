@@ -1,7 +1,10 @@
 package org.uam.sdm.pixapi.services.impl;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.uam.sdm.pixapi.domain.dto.contas.ObterContaPorChavePixResponse;
+import org.uam.sdm.pixapi.domain.dto.contas.ObterContaListResponse;
 import org.uam.sdm.pixapi.exceptions.RecursoNaoEncontradoException;
 import org.uam.sdm.pixapi.mappers.ContasMapper;
 import org.uam.sdm.pixapi.repository.ContasRepository;
@@ -26,5 +29,11 @@ public class ContasServiceImpl implements ContasService {
 
         var resposta = contasMapper.contaToObterContaPorChavePixResponse(conta);
         return resposta;
+    }
+
+    @Override
+    public Page<ObterContaListResponse> listar(Pageable pageable) {
+        return contasRepository.findAll(pageable)
+                .map(contasMapper::contaToObterContaListResponse);
     }
 }

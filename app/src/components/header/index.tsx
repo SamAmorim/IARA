@@ -7,7 +7,7 @@ import type { RouteLoaderData, RouteMatch } from "typesrc/pages"
 
 export default function Header() {
 
-    const navigate = useNavigate()    
+    const navigate = useNavigate()
     const matches = useMatches() as RouteMatch[]
 
     const activePage = matches.at(-1)
@@ -17,25 +17,29 @@ export default function Header() {
         ? activePage?.handle?.title(data as RouteLoaderData)
         : activePage?.handle?.title || ""
 
+    const showBackButton = activePage?.handle.showBackButton !== false
+
     return (
         <Box
             component="header"
             bgcolor="primary.main"
-            className="flex w-full justify-between items-center p-4 gap-4"
+            className="flex w-full h-18 justify-between items-center p-4 gap-4"
         >
             <Box className="w-16">
-                <IconButton
-                    onClick={() => navigate(-1)}
-                >
-                    <Icon className="text-white">
-                        chevron_left
-                    </Icon>
-                </IconButton>
+                {showBackButton &&
+                    <IconButton
+                        onClick={() => navigate(-1)}
+                    >
+                        <Icon className="text-white">
+                            chevron_left
+                        </Icon>
+                    </IconButton>
+                }
             </Box>
             <Typography
                 component="h1"
                 color="primary.contrastText"
-                variant="h6"
+                variant="h4"
                 className="w-full text-center"
             >
                 {title}

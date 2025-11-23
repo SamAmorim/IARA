@@ -4,4 +4,5 @@ export interface ObterContaPorChavePixResponse {
     registroNacionalCliente: string
     ispbInstituicao: string
     nomeInstituicao: string
+    saldo?: number
 }
