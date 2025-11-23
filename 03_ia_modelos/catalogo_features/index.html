@@ -10,11 +10,13 @@
         <meta name="author" content="Samuel Amorim, Leonardo Rondam, Nicholas Campanelli, Rodrigo Genaro">
       
       
-        <link rel="canonical" href="https://SamAmorim.github.io/Fraud-Finder-Pix/03_ia_modelos/treinamento_pipeline/">
+        <link rel="canonical" href="https://SamAmorim.github.io/Fraud-Finder-Pix/03_ia_modelos/catalogo_features/">
       
       
-        <link rel="prev" href="../catalogo_features/">
+        <link rel="prev" href="../inteligencia_artificial/">
       
+      
+        <link rel="next" href="../treinamento_pipeline/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>Treinamento e Pipeline - IARA - Inteligência Antifraude</title>
+        <title>Catálogo de Features - IARA - Inteligência Antifraude</title>
       
     
     
@@ -77,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#catalogo-de-features" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Treinamento e Pipeline
+              Catálogo de Features
             
           </span>
         </div>
@@ -716,10 +723,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../catalogo_features/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Features
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -735,6 +769,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-linhagem-e-origem-dos-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Linhagem e Origem dos Dados
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dicionario-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dicionário de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dicionário de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-perfil-estatico-entidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Perfil Estático (Entidades)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-contexto-da-transacao-categoricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Contexto da Transação (Categóricas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-comportamento-temporal-janelas-deslizantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Comportamento Temporal (Janelas Deslizantes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-relacionamento-e-grafos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Relacionamento e Grafos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-indicadores-de-anomalia-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Indicadores de Anomalia (Ratios)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-variaveis-alvo-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Variáveis Alvo (Targets)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-logica-de-engenharia-de-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lógica de Engenharia de Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Lógica de Engenharia de Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-tratamento-de-tempo-e-precisao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Tratamento de Tempo e Precisão
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-cardinalidade-em-janelas-unique-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Cardinalidade em Janelas (Unique Count)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-robustez-matematica-tratamento-de-ratios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Robustez Matemática (Tratamento de Ratios)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-prevencao-de-vazamento-de-dados-data-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Prevenção de Vazamento de Dados (Data Leakage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -744,17 +953,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../treinamento_pipeline/" class="md-nav__link">
         
   
   
@@ -770,7 +972,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -803,9 +1004,251 @@
   
 
 
-  <h1>Treinamento e Pipeline</h1>
-
-
+<h1 id="catalogo-de-features">Catalogo de Features<a class="headerlink" href="#catalogo-de-features" title="Permanent link">&para;</a></h1>
+<p>(<code>transacoes_db.feature_store.in_live_features</code>) é a fonte única de verdade para os atributos utilizados tanto no treinamento dos modelos quanto na inferência em tempo real. Ela consolida dados cadastrais (perfil), contexto técnico do arranjo PIX e deriva métricas comportamentais complexas baseadas no histórico transacional.</p>
+<h2 id="1-linhagem-e-origem-dos-dados">1. Linhagem e Origem dos Dados<a class="headerlink" href="#1-linhagem-e-origem-dos-dados" title="Permanent link">&para;</a></h2>
+<p>As features são construídas a partir da unificação de três domínios de dados da camada refinada (<em>Gold/Copper</em>):</p>
+<ol>
+<li><strong>Fluxo Transacional:</strong> Histórico de eventos financeiros, utilizado para cálculos de janelas deslizantes e tendências.</li>
+<li><strong>Dimensão Conta:</strong> Dados de saldo e datas de abertura, essenciais para cálculo de risco de crédito e idade da conta.</li>
+<li><strong>Dimensão Cliente:</strong> Dados demográficos (Data de Nascimento, Natureza Jurídica) fundamentais para a detecção de Engenharia Social.</li>
+</ol>
+<hr />
+<h2 id="2-dicionario-de-dados">2. Dicionário de Dados<a class="headerlink" href="#2-dicionario-de-dados" title="Permanent link">&para;</a></h2>
+<p>As variáveis estão organizadas por categoria analítica.</p>
+<h3 id="21-perfil-estatico-entidades">2.1. Perfil Estático (Entidades)<a class="headerlink" href="#21-perfil-estatico-entidades" title="Permanent link">&para;</a></h3>
+<p>Atributos cadastrais e de estado associados às partes envolvidas (Pagador e Recebedor) no momento da transação.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Feature</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descrição Funcional</th>
+<th style="text-align: left;">Relevância para Fraude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>pagador_saldo</code></td>
+<td style="text-align: left;">Decimal</td>
+<td style="text-align: left;">Saldo disponível na conta de origem.</td>
+<td style="text-align: left;">Crítico para calcular o comprometimento financeiro (esvaziamento de conta).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_saldo</code></td>
+<td style="text-align: left;">Decimal</td>
+<td style="text-align: left;">Saldo atual da conta de destino.</td>
+<td style="text-align: left;">Contas laranjas costumam ter saldo próximo a zero antes do ataque.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pagador_data_nascimento</code></td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Data de nascimento do cliente pagador.</td>
+<td style="text-align: left;"><strong>Alta</strong>: Variável principal para identificar vítimas de golpes contra idosos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_data_nascimento</code></td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">Data de nascimento do cliente recebedor.</td>
+<td style="text-align: left;">Ajuda a identificar laranjas jovens ou perfis sintéticos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[pagador/recebedor]_natureza_id</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Classificação da entidade (1=PF, 2=PJ).</td>
+<td style="text-align: left;">Estabelece o padrão de movimentação esperado (CNPJ movimenta mais que CPF).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[pagador/recebedor]_tipo_conta_id</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Modalidade (Corrente, Poupança, Pagamento).</td>
+<td style="text-align: left;">Contas de pagamento são vetores comuns para contas descartáveis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>[pagador/recebedor]_conta_aberta_em</code></td>
+<td style="text-align: left;">Timestamp</td>
+<td style="text-align: left;">Data original de abertura da conta.</td>
+<td style="text-align: left;">Base para o cálculo da idade da conta.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_idade_conta_dias</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Tempo de vida da conta de destino (em dias).</td>
+<td style="text-align: left;">Detecta contas "laranjas" recém-criadas para receber golpes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pagador_idade_conta_dias</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Tempo de vida da conta de origem (em dias).</td>
+<td style="text-align: left;">Contas antigas tendem a ser vítimas legítimas; novas tendem a ser fraudadoras.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-contexto-da-transacao-categoricas">2.2. Contexto da Transação (Categóricas)<a class="headerlink" href="#22-contexto-da-transacao-categoricas" title="Permanent link">&para;</a></h3>
+<p>Atributos técnicos do arranjo PIX que descrevem o método de iniciação e propósito.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Feature</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descrição Funcional</th>
+<th style="text-align: left;">Relevância</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>tipo_iniciacao_pix_id</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Método de entrada (Chave, QR Code, Manual, etc.).</td>
+<td style="text-align: left;"><strong>Média</strong>: Fraudes de Engenharia Social usam frequentemente Chave Manual ou Aleatória.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>finalidade_pix_id</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Propósito declarado (Transferência, Compra, Retirada).</td>
+<td style="text-align: left;">Contextualiza se o valor faz sentido para aquela finalidade.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-comportamento-temporal-janelas-deslizantes">2.3. Comportamento Temporal (Janelas Deslizantes)<a class="headerlink" href="#23-comportamento-temporal-janelas-deslizantes" title="Permanent link">&para;</a></h3>
+<p>Métricas que capturam o padrão de uso recente, calculadas sobre janelas de tempo móveis (ex: últimas 24h).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Feature</th>
+<th style="text-align: left;">Janela</th>
+<th style="text-align: left;">Lógica de Negócio</th>
+<th style="text-align: left;">Objetivo da Detecção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>pagador_txs_ultimas_24h</code></td>
+<td style="text-align: left;">24h</td>
+<td style="text-align: left;">Frequência de uso diário do pagador.</td>
+<td style="text-align: left;">Identificar mudança repentina de hábito (muitas transações em pouco tempo).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pagador_valor_ultimas_24h</code></td>
+<td style="text-align: left;">24h</td>
+<td style="text-align: left;">Volume financeiro total movido pelo pagador.</td>
+<td style="text-align: left;">Detectar fuga de capital atípica.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_txs_ultima_1h</code></td>
+<td style="text-align: left;">1h</td>
+<td style="text-align: left;">Intensidade de recebimento recente no destino.</td>
+<td style="text-align: left;">Detectar "contas de passagem" em ataques coordenados (<em>burst</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_valor_ultima_1h</code></td>
+<td style="text-align: left;">1h</td>
+<td style="text-align: left;">Volume financeiro recebido na última hora.</td>
+<td style="text-align: left;">Identificar contas que estão agregando fundos rapidamente (<em>Fan-In</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pagador_segundos_desde_ultima_tx</code></td>
+<td style="text-align: left;">Lag</td>
+<td style="text-align: left;">Tempo decorrido desde a operação anterior.</td>
+<td style="text-align: left;">Intervalos humanos vs. autômatos (Bots operam em milissegundos).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-relacionamento-e-grafos">2.4. Relacionamento e Grafos<a class="headerlink" href="#24-relacionamento-e-grafos" title="Permanent link">&para;</a></h3>
+<p>Variáveis que descrevem a força da conexão histórica entre a Origem e o Destino.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Feature</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descrição Funcional</th>
+<th style="text-align: left;">Objetivo da Detecção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>primeira_interacao</code></td>
+<td style="text-align: left;">Bool</td>
+<td style="text-align: left;">Indica se é a primeira vez que estas contas interagem.</td>
+<td style="text-align: left;"><strong>Alerta</strong>: A vasta maioria das fraudes ocorre em primeiras interações.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pagador_interacoes_com_recebedor</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Contagem histórica de transferências entre o par.</td>
+<td style="text-align: left;">Estabelece um "score de confiança" baseado na recorrência.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>recebedor_num_pagadores_unicos_24h</code></td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Quantidade de pessoas diferentes que enviaram dinheiro para este destino hoje.</td>
+<td style="text-align: left;"><strong>Crítico</strong>: Detecta topologia de "Consolidação de Fundos" (Muitos para Um), típica de lavagem de dinheiro.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-indicadores-de-anomalia-ratios">2.5. Indicadores de Anomalia (Ratios)<a class="headerlink" href="#25-indicadores-de-anomalia-ratios" title="Permanent link">&para;</a></h3>
+<p>Razões matemáticas normalizadas para identificar <em>outliers</em> financeiros.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Feature</th>
+<th style="text-align: left;">Fórmula Conceitual</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>valor_vs_media_pagador_30d</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(Valor / Média_{30d}\)</span></td>
+<td style="text-align: left;">Quantas vezes o valor atual supera a média mensal do usuário. Valores altos indicam desvio de perfil.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>valor_vs_saldo_pagador</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(Valor / Saldo\)</span></td>
+<td style="text-align: left;">Percentual do saldo comprometido na operação. Valores <span class="arithmatex">\(&gt;1.0\)</span> (uso de cheque especial) são fortes indícios de esvaziamento.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26-variaveis-alvo-targets">2.6. Variáveis Alvo (Targets)<a class="headerlink" href="#26-variaveis-alvo-targets" title="Permanent link">&para;</a></h3>
+<p>Rótulos históricos utilizados exclusivamente para o treinamento supervisionado (ignorados ou nulos durante a inferência).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Nome da Coluna</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>transacao_fraudulenta</code></td>
+<td style="text-align: left;">Int (0/1)</td>
+<td style="text-align: left;">Classificação Binária (Legítimo vs. Fraude).</td>
+<td style="text-align: left;">Alvo do Modelo 1 (Filtro de Risco).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tipo_fraude</code></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Categoria da Fraude (ex: 'engenharia_social').</td>
+<td style="text-align: left;">Alvo do Modelo 2 (Tipificador).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-logica-de-engenharia-de-features">3. Lógica de Engenharia de Features<a class="headerlink" href="#3-logica-de-engenharia-de-features" title="Permanent link">&para;</a></h2>
+<h3 id="31-tratamento-de-tempo-e-precisao">3.1. Tratamento de Tempo e Precisão<a class="headerlink" href="#31-tratamento-de-tempo-e-precisao" title="Permanent link">&para;</a></h3>
+<p>Para garantir a precisão necessária na detecção de ataques automatizados (bots), todas as janelas temporais são calculadas com precisão de <strong>segundos</strong>. As datas são convertidas internamente para <em>Unix Timestamp</em> antes do processamento das janelas deslizantes.</p>
+<h3 id="32-cardinalidade-em-janelas-unique-count">3.2. Cardinalidade em Janelas (Unique Count)<a class="headerlink" href="#32-cardinalidade-em-janelas-unique-count" title="Permanent link">&para;</a></h3>
+<p>O cálculo de <code>recebedor_num_pagadores_unicos_24h</code> utiliza uma abordagem de agregação baseada em conjuntos (<em>Sets</em>). Isso permite contar a cardinalidade distinta de origens dentro de uma janela móvel, algo essencial para identificar contas que funcionam como "caixa centralizador" de fraudes (Topologia <em>Fan-In</em>).</p>
+<h3 id="33-robustez-matematica-tratamento-de-ratios">3.3. Robustez Matemática (Tratamento de Ratios)<a class="headerlink" href="#33-robustez-matematica-tratamento-de-ratios" title="Permanent link">&para;</a></h3>
+<p>As features de razão (<em>Ratios</em>) possuem mecanismos de defesa contra inconsistências matemáticas:
+* <strong>Contas Novas:</strong> Se o usuário não possui histórico suficiente (média de 30 dias zerada), a feature de desvio de perfil retorna um valor tratado, evitando erros de divisão por zero.
+* <strong>Saldo Zerado:</strong> O mesmo tratamento é aplicado para cálculos envolvendo saldo.</p>
+<h3 id="34-prevencao-de-vazamento-de-dados-data-leakage">3.4. Prevenção de Vazamento de Dados (Data Leakage)<a class="headerlink" href="#34-prevencao-de-vazamento-de-dados-data-leakage" title="Permanent link">&para;</a></h3>
+<p>Todas as métricas históricas (médias, contagens e somas) são calculadas utilizando uma janela estrita de <strong>exclusão do evento atual</strong>.
+* <em>Lógica:</em> As agregações consideram do tempo <code>T - Janela</code> até <code>T - 1 segundo</code>.
+* <em>Motivo:</em> Isso impede que a própria transação que está sendo analisada influencie a média histórica, o que mascararia anomalias e enviesaria o treinamento do modelo.</p>
 
 
 
@@ -843,7 +1286,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../catalogo_features/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Catálogo de Features">
+          <a href="../inteligencia_artificial/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Modelos de IA">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -853,11 +1296,27 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Catálogo de Features
+                Modelos de IA
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../treinamento_pipeline/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Treinamento e Pipeline">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Treinamento e Pipeline
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

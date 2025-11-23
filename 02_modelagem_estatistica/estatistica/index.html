@@ -1,10 +1,12 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="pt" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detalhamento rigoroso das distribuições de probabilidade, grafos estocásticos e regras determinísticas que compõem o gerador de dados do IARA.">
       
       
         <meta name="author" content="Samuel Amorim, Leonardo Rondam, Nicholas Campanelli, Rodrigo Genaro">
@@ -27,7 +29,7 @@
     
     
       
-        <title>Modelagem Estatistica - IARA - Inteligencia Antifraude e Risco Automatizada</title>
+        <title>Especificação Técnica: Modelagem Estatística - IARA - Inteligência Antifraude</title>
       
     
     
@@ -80,8 +82,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-macroeconomia-do-ecossistema-gerador" class="md-skip">
-          Skip to content
+        <a href="#especificacao-tecnica-modelagem-estatistica-e-estocastica" class="md-skip">
+          Ir para o conteúdo
         </a>
       
     </div>
@@ -93,11 +95,10 @@
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="IARA - Inteligencia Antifraude e Risco Automatizada" class="md-header__button md-logo" aria-label="IARA - Inteligencia Antifraude e Risco Automatizada" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="IARA - Inteligência Antifraude" class="md-header__button md-logo" aria-label="IARA - Inteligência Antifraude" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/icon.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,13 +109,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            IARA - Inteligencia Antifraude e Risco Automatizada
+            IARA - Inteligência Antifraude
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modelagem Estatistica
+              Especificação Técnica: Modelagem Estatística
             
           </span>
         </div>
@@ -162,16 +163,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Pesquisar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -184,7 +185,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando a pesquisa
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -196,7 +197,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/SamAmorim/Fraud-Finder-Pix/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/SamAmorim/Fraud-Finder-Pix/" title="Ir ao repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -217,7 +218,7 @@
         
           
             
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -233,7 +234,7 @@
   
     
   
-  Inicio e Proposta
+  Início e Proposta
 
       </a>
     </li>
@@ -251,6 +252,8 @@
         <a href="../../01_arquitetura/software/" class="md-tabs__link">
           
   
+  
+    
   
   Arquitetura
 
@@ -274,7 +277,9 @@
           
   
   
-  Estatistica
+    
+  
+  Modelagem Estatística
 
         </a>
       </li>
@@ -290,31 +295,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../03_ia_modelos/arquitetura_cascata/" class="md-tabs__link">
+        <a href="../../03_ia_modelos/inteligencia_artificial/" class="md-tabs__link">
           
   
   
-  Modelos de Inteligencia Artificial
-
-        </a>
-      </li>
     
   
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../04_avaliacao/metrica/" class="md-tabs__link">
-          
-  
-  
-  Avaliacao e Resultados
+  Inteligência Artificial
 
         </a>
       </li>
@@ -344,19 +331,18 @@
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="IARA - Inteligencia Antifraude e Risco Automatizada" class="md-nav__button md-logo" aria-label="IARA - Inteligencia Antifraude e Risco Automatizada" data-md-component="logo">
+    <a href="../.." title="IARA - Inteligência Antifraude" class="md-nav__button md-logo" aria-label="IARA - Inteligência Antifraude" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="../../assets/icon.svg" alt="logo">
 
     </a>
-    IARA - Inteligencia Antifraude e Risco Automatizada
+    IARA - Inteligência Antifraude
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/SamAmorim/Fraud-Finder-Pix/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/SamAmorim/Fraud-Finder-Pix/" title="Ir ao repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -383,7 +369,7 @@
   <span class="md-ellipsis">
     
   
-    Inicio e Proposta
+    Início e Proposta
   
 
     
@@ -404,9 +390,17 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
+      
+        
       
     
     
@@ -462,7 +456,7 @@
   <span class="md-ellipsis">
     
   
-    Visao Geral do Software
+    Visão Geral do Software
   
 
     
@@ -521,12 +515,20 @@
   
     
     
+      
+        
+      
+        
+      
+    
     
     
       
         
         
       
+      
+        
       
     
     
@@ -544,7 +546,7 @@
   <span class="md-ellipsis">
     
   
-    Estatistica
+    Modelagem Estatística
   
 
     
@@ -560,7 +562,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Estatistica
+    Modelagem Estatística
   
 
           </label>
@@ -579,6 +581,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -587,7 +591,7 @@
   <span class="md-ellipsis">
     
   
-    Modelagem Estatistica
+    Fundamentos Estatísticos
   
 
     
@@ -605,7 +609,7 @@
   <span class="md-ellipsis">
     
   
-    Modelagem Estatistica
+    Fundamentos Estatísticos
   
 
     
@@ -617,34 +621,36 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Índice
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-macroeconomia-do-ecossistema-gerador" class="md-nav__link">
+  <a href="#resumo-das-caracteristicas-modeladas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Macroeconomia do Ecossistema Gerador
+        Resumo das Características Modeladas
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Macroeconomia do Ecossistema Gerador">
+    <nav class="md-nav" aria-label="Resumo das Características Modeladas">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-calculo-do-numero-de-clientes" class="md-nav__link">
+  <a href="#1-agentes-e-entidades-estado-estatico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.1. Cálculo do Número de Clientes
+        1. Agentes e Entidades (Estado Estático)
       
     </span>
   </a>
@@ -652,10 +658,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-volume-mensal-de-transacoes" class="md-nav__link">
+  <a href="#2-eventos-e-dinamica-transacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1.2. Volume Mensal de Transações
+        2. Eventos e Dinâmica (Transações)
       
     </span>
   </a>
@@ -668,22 +674,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-modelagem-estatistica-de-agentes-clientes-e-contas" class="md-nav__link">
+  <a href="#detalhamento-da-modelagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Modelagem Estatística de Agentes (Clientes e Contas)
+        Detalhamento da Modelagem
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Modelagem Estatística de Agentes (Clientes e Contas)">
+    <nav class="md-nav" aria-label="Detalhamento da Modelagem">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-idade-e-tempo-de-fundacao-uniforme-continua" class="md-nav__link">
+  <a href="#1-modelagem-macro-estrutural-populacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1. Idade e Tempo de Fundação (Uniforme Contínua)
+        1. Modelagem Macro-Estrutural (População)
       
     </span>
   </a>
@@ -691,10 +697,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-distribuicao-de-contas-uniforme-discreta" class="md-nav__link">
+  <a href="#2-modelagem-micro-atributiva-agentes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2. Distribuição de Contas (Uniforme Discreta)
+        2. Modelagem Micro-Atributiva (Agentes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Modelagem Micro-Atributiva (Agentes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-risco-latente-r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Risco Latente (\(R\))
       
     </span>
   </a>
@@ -702,10 +720,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-risco-da-conta-bernoulli" class="md-nav__link">
+  <a href="#22-capacidade-financeira-saldo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.3. Risco da Conta (Bernoulli)
+        2.2. Capacidade Financeira (Saldo)
       
     </span>
   </a>
@@ -713,21 +731,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-data-de-abertura-condicional" class="md-nav__link">
+  <a href="#23-temporalidade-condicional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4. Data de Abertura Condicional
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-saldo-inicial-da-conta-log-normal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.5. Saldo Inicial da Conta (Log-Normal)
+        2.3. Temporalidade Condicional
       
     </span>
   </a>
@@ -738,24 +745,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-modelagem-de-fraudes-e-eventos" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-fisica-das-transacoes-eventos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Modelagem de Fraudes e Eventos
+        3. Física das Transações (Eventos)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Modelagem de Fraudes e Eventos">
+    <nav class="md-nav" aria-label="3. Física das Transações (Eventos)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-valor-da-transacao-modelo-de-mistura" class="md-nav__link">
+  <a href="#31-o-modelo-de-valor-v_tx" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.1. Valor da Transação (Modelo de Mistura)
+        3.1. O Modelo de Valor (\(V_{tx}\))
       
     </span>
   </a>
@@ -763,32 +770,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#32-logica-sequencial-condicional-de-fraude-ptextfraude" class="md-nav__link">
+  <a href="#32-mecanismo-abaixo-do-radar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3.2. Lógica Sequencial Condicional de Fraude (\(P(\text{Fraude})\))
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-padroes-comportamentais-injetados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.3. Padrões Comportamentais Injetados
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-fraudes-em-cadeia-topologia-e-grafos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.4. Fraudes em Cadeia (Topologia e Grafos)
+        3.2. Mecanismo "Abaixo do Radar"
       
     </span>
   </a>
@@ -799,26 +784,120 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-modelo-de-dados-de-saida-tabelas-delta" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#4-motor-de-causalidade-probabilidade-de-fraude" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Modelo de Dados de Saída (Tabelas Delta)
+        4. Motor de Causalidade (Probabilidade de Fraude)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#5-hiperparametros-de-simulacao" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#5-topologias-de-grafo-estocastico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Hiperparâmetros de Simulação
+        5. Topologias de Grafo Estocástico
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Topologias de Grafo Estocástico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-triangulacao-fan-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Triangulação (Fan-Out)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-consolidacao-fan-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Consolidação (Fan-In)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-tipologias-comportamentais-especificas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tipologias Comportamentais Específicas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Tipologias Comportamentais Específicas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-engenharia-social-golpe-do-idoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Engenharia Social (Golpe do Idoso)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-ataque-de-madrugada-automacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Ataque de Madrugada (Automação)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-teste-de-conta-ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Teste de Conta (Ping)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-hiperparametros-de-simulacao-configuracao-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Hiperparâmetros de Simulação (Configuração Global)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -845,7 +924,7 @@
   <span class="md-ellipsis">
     
   
-    Estrutura de Saida
+    Estrutura de Saída (Output)
   
 
     
@@ -874,9 +953,19 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
+      
+        
       
     
     
@@ -896,7 +985,7 @@
   <span class="md-ellipsis">
     
   
-    Modelos de Inteligencia Artificial
+    Inteligência Artificial
   
 
     
@@ -912,7 +1001,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Modelos de Inteligencia Artificial
+    Inteligência Artificial
   
 
           </label>
@@ -925,14 +1014,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_ia_modelos/arquitetura_cascata/" class="md-nav__link">
+      <a href="../../03_ia_modelos/inteligencia_artificial/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Arquitetura em Cascata
+    Modelos de IA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_ia_modelos/catalogo_features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo de Features
   
 
     
@@ -981,121 +1098,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Avaliacao e Resultados
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Avaliacao e Resultados
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04_avaliacao/metrica/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Metricas e Matriz de Confusao
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04_avaliacao/analise_erros/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Analise de Erros e Vies
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1116,292 +1118,262 @@
   
 
 
-  <h1>Modelagem Estatistica</h1>
-
-<p>A <strong>Modelagem Estatística</strong> e a <strong>Lógica de Geração</strong> criam o Ecossistema Sintético, fornecendo um <em>dataset</em> de transações PIX de alta fidelidade para o treinamento dos modelos de IA.</p>
+<h1 id="especificacao-tecnica-modelagem-estatistica-e-estocastica">Especificação Técnica: Modelagem Estatística e Estocástica<a class="headerlink" href="#especificacao-tecnica-modelagem-estatistica-e-estocastica" title="Permanent link">&para;</a></h1>
+<p>Este documento detalha as distribuições de probabilidade, funções determinísticas e processos estocásticos utilizados para compor o "Universo Financeiro Sintético" do projeto IARA. A geração de dados segue o paradigma de <strong>Modelo Preditivo Invertido</strong>, onde comportamentos latentes (causas) são definidos <em>a priori</em> para gerar observáveis transacionais (efeitos).</p>
+<h2 id="resumo-das-caracteristicas-modeladas">Resumo das Características Modeladas<a class="headerlink" href="#resumo-das-caracteristicas-modeladas" title="Permanent link">&para;</a></h2>
+<h3 id="1-agentes-e-entidades-estado-estatico">1. Agentes e Entidades (Estado Estático)<a class="headerlink" href="#1-agentes-e-entidades-estado-estatico" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Volumetria Populacional:</strong> Função determinística baseada em dados macroeconômicos (BACEN) e pressão de atividade (<span class="arithmatex">\(T_{esperado}\)</span>).</li>
+<li><strong>Demografia (Idade/Fundação):</strong> Distribuição Uniforme Contínua (<span class="arithmatex">\(U[a, b]\)</span>) para datas de nascimento e fundação.</li>
+<li><strong>Densidade de Contas:</strong> Distribuição Uniforme Discreta condicionada à natureza jurídica (PF/PJ).</li>
+<li><strong>Risco Latente da Conta (<span class="arithmatex">\(R\)</span>):</strong> Variável Aleatória de Bernoulli (<span class="arithmatex">\(p=0.05\)</span>) determinando contas "laranjas".</li>
+<li><strong>Saldo Inicial (<span class="arithmatex">\(S\)</span>):</strong> Distribuição Log-Normal condicionada à natureza jurídica (<span class="arithmatex">\(\mu, \sigma\)</span>) para simular desigualdade de riqueza.</li>
+<li><strong>Temporalidade de Abertura:</strong> Distribuição Uniforme condicionada ao Risco (<span class="arithmatex">\(R\)</span>); contas fraudulentas são recentes.</li>
+<li><strong>Latência de Chave Pix:</strong> Distribuição Uniforme Discreta condicionada ao Risco (<span class="arithmatex">\(R\)</span>); fraudadores operam com imediatismo.</li>
+</ul>
+<h3 id="2-eventos-e-dinamica-transacoes">2. Eventos e Dinâmica (Transações)<a class="headerlink" href="#2-eventos-e-dinamica-transacoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Sazonalidade Temporal:</strong> Amostragem Categórica Ponderada (Dias Úteis/Fins de Semana) e Uniforme Contínua (Horários).</li>
+<li><strong>Valor Transacional (<span class="arithmatex">\(V_{tx}\)</span>):</strong> Modelo de Mistura (<em>Mixture Model</em>) composto por uma Log-Normal Base multiplicada por Fatores de Magnitude Discretos.</li>
+<li><strong>Causalidade de Fraude (<span class="arithmatex">\(P(F)\)</span>):</strong> Árvore de Decisão Probabilística Hierárquica baseada em vetores de risco (Alvo, Destino, Chave).</li>
+<li><strong>Topologia de Lavagem (Fan-Out):</strong> Processo de Ramificação Estocástica com Partição de Valor via Distribuição de Dirichlet.</li>
+<li><strong>Topologia de Consolidação (Fan-In):</strong> Convergência Temporal Uniforme em Janela Curta (Ataque Coordenado).</li>
+</ul>
 <hr />
-<h2 id="1-macroeconomia-do-ecossistema-gerador">1. Macroeconomia do Ecossistema Gerador<a class="headerlink" href="#1-macroeconomia-do-ecossistema-gerador" title="Permanent link">&para;</a></h2>
-<p>O volume total de agentes (clientes) e eventos (transações) é determinado por um <strong>modelo determinístico</strong> baseado em dados empíricos do BACEN e parâmetros de escala.</p>
-<h3 id="11-calculo-do-numero-de-clientes">1.1. Cálculo do Número de Clientes<a class="headerlink" href="#11-calculo-do-numero-de-clientes" title="Permanent link">&para;</a></h3>
-<p>O número de agentes (<span class="arithmatex">\(N_{pf}\)</span> ou <span class="arithmatex">\(N_{pj}\)</span>) decorre diretamente do volume observado e de uma <strong>hipótese comportamental</strong> (<span class="arithmatex">\(T_{esperado}\)</span>).</p>
+<h2 id="detalhamento-da-modelagem">Detalhamento da Modelagem<a class="headerlink" href="#detalhamento-da-modelagem" title="Permanent link">&para;</a></h2>
+<h3 id="1-modelagem-macro-estrutural-populacao">1. Modelagem Macro-Estrutural (População)<a class="headerlink" href="#1-modelagem-macro-estrutural-populacao" title="Permanent link">&para;</a></h3>
+<p>A escala do ecossistema é ancorada na realidade econômica. O número de agentes (<span class="arithmatex">\(N\)</span>) para um determinado município não é aleatório, mas uma função do Volume Financeiro Anual (<span class="arithmatex">\(V_{anual}\)</span>) daquela região reportado pelo Banco Central.</p>
+<p><strong>Função Geradora de População:</strong></p>
 <div class="arithmatex">\[
-N_{pf} = \max\Big(1, \Big\lfloor \frac{V_{pf\_anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \Big\rfloor \Big)
+N_{agentes} = \max\left(1, \left\lfloor \frac{V_{anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \right\rfloor\right)
 \]</div>
+<p>Onde:
+* <strong><span class="arithmatex">\(f_{escala}\)</span></strong>: Fator de redução do dataset (amostragem).
+* <strong><span class="arithmatex">\(T_{esperado}\)</span></strong>: Atividade média mensal esperada por cliente.</p>
+<hr />
+<h3 id="2-modelagem-micro-atributiva-agentes">2. Modelagem Micro-Atributiva (Agentes)<a class="headerlink" href="#2-modelagem-micro-atributiva-agentes" title="Permanent link">&para;</a></h3>
+<p>Cada agente é instanciado com atributos estocásticos que definem seu perfil comportamental.</p>
+<h4 id="21-risco-latente-r">2.1. Risco Latente (<span class="arithmatex">\(R\)</span>)<a class="headerlink" href="#21-risco-latente-r" title="Permanent link">&para;</a></h4>
+<p>Propriedade fundamental para a injeção de fraudes. Define se uma conta pertence a um usuário legítimo ou a um laranja/fraudador.</p>
 <div class="arithmatex">\[
-N_{pj} = \max\Big(1, \Big\lfloor \frac{V_{pj\_anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \Big\rfloor \Big)
+R \sim Bernoulli(p_{risco})
+\]</div>
+<ul>
+<li><strong>Se <span class="arithmatex">\(R=1\)</span> (Sucesso):</strong> A conta assume comportamento de alto risco (abertura recente, cadastro rápido de chaves).</li>
+<li><strong>Parâmetro padrão:</strong> <span class="arithmatex">\(p_{risco} = 0.05\)</span>.</li>
+</ul>
+<h4 id="22-capacidade-financeira-saldo">2.2. Capacidade Financeira (Saldo)<a class="headerlink" href="#22-capacidade-financeira-saldo" title="Permanent link">&para;</a></h4>
+<p>O saldo inicial (<span class="arithmatex">\(S_{conta}\)</span>) modela a disparidade de riqueza utilizando uma <strong>Distribuição Log-Normal</strong>. Os parâmetros são ajustados condicionalmente à natureza do cliente (Pessoa Física vs. Jurídica) para garantir que empresas tenham, em média, maior liquidez e variância.</p>
+<div class="arithmatex">\[
+S_{conta} \sim Log\text{-}Normal(\mu, \sigma^2)
 \]</div>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Variável</th>
-<th style="text-align: left;">Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(V_{pf\_anual}\)</span> ou <span class="arithmatex">\(V_{pj\_anual}\)</span></td>
-<td style="text-align: left;">Volume anual de transações por PF ou PJ (dado empírico vindo do BACEN). [cite: 208]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(f_{escala}\)</span></td>
-<td style="text-align: left;">Parâmetro de escala definido por uma porcentagem. [cite: 209]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="arithmatex">\(T_{esperado}\)</span></td>
-<td style="text-align: left;">Suposição sobre a <strong>atividade esperada</strong> do cliente (transações por mês). [cite: 210, 220]</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Nota sobre <span class="arithmatex">\(T_{esperado}\)</span>:</strong> Se diminuir o valor esperado (<span class="arithmatex">\(T_{esperado}\)</span>), mais clientes precisam ser gerados para manter o volume total, resultando em uma Atividade Média Real <strong>MENOR</strong> por cliente. Se aumentar o valor, menos clientes são gerados, resultando em Atividade Média Real <strong>MAIOR</strong>. [cite: 211-219]</p>
-</blockquote>
-<h3 id="12-volume-mensal-de-transacoes">1.2. Volume Mensal de Transações<a class="headerlink" href="#12-volume-mensal-de-transacoes" title="Permanent link">&para;</a></h3>
-<p>O volume de eventos (transação) a ser gerado é um escalonamento determinado dos dados empíricos. [cite: 225]</p>
-<div class="arithmatex">\[
-V_{mensal} = \lfloor V_{mensal\_original} \cdot f_{escala} \rfloor
-\]</div>
-<hr />
-<h2 id="2-modelagem-estatistica-de-agentes-clientes-e-contas">2. Modelagem Estatística de Agentes (Clientes e Contas)<a class="headerlink" href="#2-modelagem-estatistica-de-agentes-clientes-e-contas" title="Permanent link">&para;</a></h2>
-<p>As características dos agentes são modeladas como variáveis aleatórias seguindo regras estatísticas para simular um comportamento realista. [cite: 227]</p>
-<h3 id="21-idade-e-tempo-de-fundacao-uniforme-continua">2.1. Idade e Tempo de Fundação (Uniforme Contínua)<a class="headerlink" href="#21-idade-e-tempo-de-fundacao-uniforme-continua" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Agente</th>
-<th style="text-align: left;">Variável</th>
-<th style="text-align: left;">Distribuição</th>
-<th style="text-align: left;">Intervalo (Idade/Tempo)</th>
+<th style="text-align: left;">Natureza</th>
+<th style="text-align: left;">Parâmetros (<span class="arithmatex">\(\mu, \sigma\)</span>)</th>
+<th style="text-align: left;">Característica</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>Pessoa Física</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(D_{nasc\,(PF)}\)</span></td>
-<td style="text-align: left;">Uniforme</td>
-<td style="text-align: left;">Entre 18 e 80 anos de idade. [cite: 232, 237, 238]</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mu=6.0, \sigma=1.5\)</span></td>
+<td style="text-align: left;">Distribuição padrão de varejo.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Pessoa Jurídica</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(D_{fund\,(PJ)}\)</span></td>
-<td style="text-align: left;">Uniforme</td>
-<td style="text-align: left;">Entre 1 e 20 anos de existência. [cite: 233, 242, 243]</td>
+<td style="text-align: left;"><span class="arithmatex">\(\mu=9.0, \sigma=1.8\)</span></td>
+<td style="text-align: left;">Cauda longa (saldos multimilionários).</td>
 </tr>
 </tbody>
 </table>
-<h3 id="22-distribuicao-de-contas-uniforme-discreta">2.2. Distribuição de Contas (Uniforme Discreta)<a class="headerlink" href="#22-distribuicao-de-contas-uniforme-discreta" title="Permanent link">&para;</a></h3>
-<p>O número de contas por cliente é condicional à natureza do cliente: [cite: 245]</p>
+<h4 id="23-temporalidade-condicional">2.3. Temporalidade Condicional<a class="headerlink" href="#23-temporalidade-condicional" title="Permanent link">&para;</a></h4>
+<p>A "idade" da conta e das chaves Pix não é aleatória, mas dependente do Risco (<span class="arithmatex">\(R\)</span>).</p>
 <ul>
-<li><strong>PF:</strong> <span class="arithmatex">\(N_{contas\,|\,(PF)} \sim U\{1, 2\}\)</span> (1 ou 2 contas, 50% de chance cada). [cite: 246, 248]</li>
-<li><strong>PJ:</strong> <span class="arithmatex">\(N_{contas\,|\,(PJ)} \sim U\{1, 2, 3, 4, 5\}\)</span> (Entre 1 e 5 contas, 20% de chance cada). [cite: 247, 249]</li>
+<li>
+<p><strong>Data de Abertura:</strong></p>
+<ul>
+<li><em>Baixo Risco (<span class="arithmatex">\(R=0\)</span>):</em> Histórico longo, até 10 anos. <span class="arithmatex">\(U[D_{hoje}-3650, D_{limite}]\)</span>.</li>
+<li><em>Alto Risco (<span class="arithmatex">\(R=1\)</span>):</em> Histórico curto, forçado nos últimos 6 meses. <span class="arithmatex">\(U[D_{hoje}-180, D_{limite}]\)</span>.</li>
 </ul>
-<h3 id="23-risco-da-conta-bernoulli">2.3. Risco da Conta (Bernoulli)<a class="headerlink" href="#23-risco-da-conta-bernoulli" title="Permanent link">&para;</a></h3>
-<p>O perfil de risco (<span class="arithmatex">\(R\)</span>) é a primeira característica definida e determina se a conta será classificada como "Alto Risco" ou "Risco Normal". [cite: 287, 288]</p>
+</li>
+<li>
+<p><strong>Latência de Cadastro de Chave (<span class="arithmatex">\(\Delta_{chave}\)</span>):</strong>
+    Tempo decorrido entre a abertura da conta e o cadastro da chave.</p>
+<ul>
+<li><em>Alto Risco (<span class="arithmatex">\(R=1\)</span>):</em> Imediatismo operacional. <span class="arithmatex">\(\Delta \sim U\{1, \dots, 7\}\)</span> dias.</li>
+<li><em>Baixo Risco (<span class="arithmatex">\(R=0\)</span>):</em> Comportamento orgânico. <span class="arithmatex">\(\Delta \sim U\{1, \dots, 90\}\)</span> dias.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-fisica-das-transacoes-eventos">3. Física das Transações (Eventos)<a class="headerlink" href="#3-fisica-das-transacoes-eventos" title="Permanent link">&para;</a></h3>
+<p>A geração de cada transação é um evento independente modelado por um sistema de mistura de distribuições.</p>
+<h4 id="31-o-modelo-de-valor-v_tx">3.1. O Modelo de Valor (<span class="arithmatex">\(V_{tx}\)</span>)<a class="headerlink" href="#31-o-modelo-de-valor-v_tx" title="Permanent link">&para;</a></h4>
+<p>O valor final não é amostrado de uma única distribuição, mas composto por um valor base estocástico e um multiplicador determinístico de contexto (<span class="arithmatex">\(M\)</span>).</p>
 <div class="arithmatex">\[
-R \sim \text{Bernoulli}(p_{risco})
+V_{tx} = V_{base} \cdot M
 \]</div>
-<ul>
-<li><span class="arithmatex">\(R=1\)</span> (Alto Risco) ou <span class="arithmatex">\(R=0\)</span> (Risco Normal). [cite: 291]</li>
-<li><span class="arithmatex">\(p_{risco}\)</span> é a probabilidade de sucesso (Alto Risco), definida pela variável <code>PROB_CONTA_ALTO_RISCO</code> (ex: 0.03). [cite: 292]</li>
+<ol>
+<li><strong>Componente Estocástico (<span class="arithmatex">\(V_{base}\)</span>):</strong> Segue uma Log-Normal global.
+    <span class="arithmatex">\(<span class="arithmatex">\(V_{base} \sim Log\text{-}Normal(\ln(150), 0.8^2)\)</span>\)</span></li>
+<li><strong>Componente Determinístico (<span class="arithmatex">\(M\)</span>):</strong><ul>
+<li><em>Transação Normal:</em> <span class="arithmatex">\(M=1\)</span></li>
+<li><em>Outlier Legítimo:</em> <span class="arithmatex">\(M=2.5\)</span> (Probabilidade de Ocorrência <span class="arithmatex">\(P=0.04\)</span>)</li>
+<li><em>Fraude Padrão:</em> <span class="arithmatex">\(M=30.0\)</span></li>
 </ul>
-<h3 id="24-data-de-abertura-condicional">2.4. Data de Abertura Condicional<a class="headerlink" href="#24-data-de-abertura-condicional" title="Permanent link">&para;</a></h3>
-<p>A data de abertura da conta (<span class="arithmatex">\(D_{abertura}\)</span>) é amostrada de forma estritamente <strong>condicional ao Risco da Conta (<span class="arithmatex">\(R\)</span>)</strong>: [cite: 313]</p>
-<ul>
-<li><strong>Alto Risco (<span class="arithmatex">\(R=1\)</span>):</strong> Contas são <strong>forçadas a serem recentes</strong> (criadas nos últimos 6 meses). [cite: 325, 326]</li>
-<li><strong>Risco Normal (<span class="arithmatex">\(R=0\)</span>):</strong> Contas podem ser significativamente mais antigas (até 10 anos). [cite: 323, 327]</li>
-</ul>
-<h3 id="25-saldo-inicial-da-conta-log-normal">2.5. Saldo Inicial da Conta (Log-Normal)<a class="headerlink" href="#25-saldo-inicial-da-conta-log-normal" title="Permanent link">&para;</a></h3>
-<p>O saldo inicial (<span class="arithmatex">\(S_{conta}\)</span>) é modelado usando a <strong>Distribuição Log-Normal</strong>. [cite: 329] Os parâmetros são definidos condicionalmente à natureza do cliente para simular saldos mais altos para PJ. [cite: 332, 340]</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Cliente</th>
-<th style="text-align: left;"><span class="arithmatex">\(\mu\)</span> (Localização)</th>
-<th style="text-align: left;"><span class="arithmatex">\(\sigma\)</span> (Escala/Variação)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Pessoa Física (PF)</strong></td>
-<td style="text-align: left;">6.0 [cite: 334]</td>
-<td style="text-align: left;">1.5 [cite: 335]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Pessoa Jurídica (PJ)</strong></td>
-<td style="text-align: left;">9.0 [cite: 337]</td>
-<td style="text-align: left;">1.8 [cite: 338]</td>
-</tr>
-</tbody>
-</table>
+</li>
+</ol>
+<h4 id="32-mecanismo-abaixo-do-radar">3.2. Mecanismo "Abaixo do Radar"<a class="headerlink" href="#32-mecanismo-abaixo-do-radar" title="Permanent link">&para;</a></h4>
+<p>Para simular fraudes que tentam burlar regras de limite, uma sub-rotina substitui a distribuição contínua por valores discretos de limiar com probabilidade <span class="arithmatex">\(P_{radar}=0.40\)</span> (dado que é fraude).</p>
+<div class="arithmatex">\[
+V_{tx}|(Radar=1) \sim U\{999.90, 499.90, 1999.90\}
+\]</div>
 <hr />
-<h2 id="3-modelagem-de-fraudes-e-eventos">3. Modelagem de Fraudes e Eventos<a class="headerlink" href="#3-modelagem-de-fraudes-e-eventos" title="Permanent link">&para;</a></h2>
-<h3 id="31-valor-da-transacao-modelo-de-mistura">3.1. Valor da Transação (Modelo de Mistura)<a class="headerlink" href="#31-valor-da-transacao-modelo-de-mistura" title="Permanent link">&para;</a></h3>
-<p>O valor final da transação (<span class="arithmatex">\(V_{tx}\)</span>) é o produto do <strong>Valor Base</strong> (<span class="arithmatex">\(V_{base} \sim \text{Log-Normal}\)</span>) e um <strong>Multiplicador</strong> (<span class="arithmatex">\(M\)</span>). [cite: 384, 385]</p>
+<h3 id="4-motor-de-causalidade-probabilidade-de-fraude">4. Motor de Causalidade (Probabilidade de Fraude)<a class="headerlink" href="#4-motor-de-causalidade-probabilidade-de-fraude" title="Permanent link">&para;</a></h3>
+<p>A decisão de marcar uma transação como fraudulenta (<span class="arithmatex">\(F=1\)</span>) segue uma lógica hierárquica de prioridades baseada no vetor de contexto <span class="arithmatex">\(\mathbf{x}\)</span>.</p>
+<div class="arithmatex">\[P(F|\mathbf{x}) = \text{select}(\mathbf{x})\]</div>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Categoria</th>
-<th style="text-align: left;">Multiplicador (<span class="arithmatex">\(M\)</span>)</th>
-<th style="text-align: left;">Lógica de Ocorrência</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Normal</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(M = 1\)</span></td>
-<td style="text-align: left;">O valor base não muda. [cite: 391]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Outlier Legítimo</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(M = 2.5\)</span> (Fixo)</td>
-<td style="text-align: left;">Ocorre com probabilidade de 4% (<span class="arithmatex">\(\neg\)</span> Fraude). [cite: 392, 397]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Fraude</strong></td>
-<td style="text-align: left;"><span class="arithmatex">\(M = 30\)</span> (Fixo, Alto)</td>
-<td style="text-align: left;">Valor significativamente maior que o normal. [cite: 398, 399]</td>
-</tr>
-</tbody>
-</table>
-<h3 id="32-logica-sequencial-condicional-de-fraude-ptextfraude">3.2. Lógica Sequencial Condicional de Fraude (<span class="arithmatex">\(P(\text{Fraude})\)</span>)<a class="headerlink" href="#32-logica-sequencial-condicional-de-fraude-ptextfraude" title="Permanent link">&para;</a></h3>
-<p>A <strong>Probabilidade de Fraude</strong> (<span class="arithmatex">\(P(\text{Fraude})\)</span>) é determinada por uma <strong>lógica sequencial e condicional</strong> baseada em prioridade de risco: [cite: 429]</p>
-<ul>
-<li><strong>Prioridade 1 (Máxima):</strong> Se o pagador for um <strong>Alvo Vulnerável</strong> (<span class="arithmatex">\(A\)</span>: PF <span class="arithmatex">\(\geq 55\)</span> anos), <span class="arithmatex">\(p_{alvo}=0.80\)</span>. [cite: 423, 424]</li>
-<li><strong>Prioridade 2:</strong> Se não for Alvo Vulnerável (<span class="arithmatex">\(\neg A\)</span>) e o destino for <strong>Alto Risco</strong> (<span class="arithmatex">\(R\)</span>), <span class="arithmatex">\(p_{risco}=0.60\)</span>. [cite: 425]</li>
-<li><strong>Prioridade 3:</strong> Se <span class="arithmatex">\(\neg A\)</span>, <span class="arithmatex">\(\neg R\)</span> e a <strong>Chave PIX for Recente</strong> (<span class="arithmatex">\(C\)</span>), <span class="arithmatex">\(p_{recente}=0.40\)</span>. [cite: 426, 427]</li>
-<li><strong>Prioridade 4 (Base):</strong> Se nenhuma condição de risco for atendida, <span class="arithmatex">\(p_{base}=0.35\)</span>. [cite: 428]</li>
-</ul>
-<h3 id="33-padroes-comportamentais-injetados">3.3. Padrões Comportamentais Injetados<a class="headerlink" href="#33-padroes-comportamentais-injetados" title="Permanent link">&para;</a></h3>
-<p>Uma vez rotulada como fraude (<span class="arithmatex">\(F=1\)</span>), a transação é classificada em um tipo, o que desencadeia padrões específicos: [cite: 467]</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Tipo de Fraude</th>
-<th style="text-align: left;">Sinal Comportamental Injetado</th>
-<th style="text-align: left;">Modelo Estatístico</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Engenharia Social</strong></td>
-<td style="text-align: left;">Fraude de alto valor com <span class="arithmatex">\(p_{alvo}\)</span>. [cite: 472]</td>
-<td style="text-align: left;">Condição <span class="arithmatex">\(A\)</span>. [cite: 472]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Ataque de Madrugada</strong></td>
-<td style="text-align: left;">Horário forçado para <span class="arithmatex">\(H_{tx} \sim U\{1, 2, 3, 4\}\)</span> (1h-4h). [cite: 472]</td>
-<td style="text-align: left;">Uniforme Discreta. [cite: 472]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Teste de Conta</strong></td>
-<td style="text-align: left;">Transação prévia de <strong>baixo valor</strong> (<span class="arithmatex">\(\sim U[0.01, 1.00]\)</span>) com pequeno <em>delay</em>. [cite: 472]</td>
-<td style="text-align: left;">Uniforme Contínua/Discreta. [cite: 472]</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Abaixo do Radar</strong></td>
-<td style="text-align: left;">Valor <strong>substituído</strong> por valores discretos (ex: 999.90, 1999.90). [cite: 527, 528]</td>
-<td style="text-align: left;">Uniforme Discreta de valores-limite. [cite: 531]</td>
-</tr>
-</tbody>
-</table>
-<h3 id="34-fraudes-em-cadeia-topologia-e-grafos">3.4. Fraudes em Cadeia (Topologia e Grafos)<a class="headerlink" href="#34-fraudes-em-cadeia-topologia-e-grafos" title="Permanent link">&para;</a></h3>
-<p>As fraudes em cadeia são modeladas como <strong>processos estocásticos em grafo</strong> para camuflar o movimento de fundos. [cite: 484]</p>
-<ul>
-<li><strong>Triangulação (Fan-Out):</strong> Fragmentação do valor (divisão) para múltiplos nós sucessores. [cite: 486, 502] A divisão é feita via <strong>Distribuição de Dirichlet</strong>. [cite: 503]</li>
-<li><strong>Consolidação (Fan-In):</strong> Convergência de múltiplas arestas (origens <span class="arithmatex">\(N_{fontes} \sim U[10, 30]\)</span>) em um único nó destino em uma janela de tempo curta (<span class="arithmatex">\(\Delta_{segundos} \sim U[1, 600]\)</span> segundos). [cite: 504, 506]</li>
-</ul>
-<hr />
-<h2 id="4-modelo-de-dados-de-saida-tabelas-delta">4. Modelo de Dados de Saída (Tabelas Delta)<a class="headerlink" href="#4-modelo-de-dados-de-saida-tabelas-delta" title="Permanent link">&para;</a></h2>
-<p>O <em>pipeline</em> gera quatro tabelas Delta principais para materializar os agentes e eventos, armazenadas no <em>database</em> <code>transacoes_db.copper</code>. [cite: 561, 562]</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Tabela</th>
+<th style="text-align: left;">Prioridade</th>
+<th style="text-align: left;">Condição (<span class="arithmatex">\(\mathbf{x}\)</span>)</th>
+<th style="text-align: left;">Probabilidade Atribuída</th>
 <th style="text-align: left;">Descrição</th>
-<th style="text-align: left;">Sinais Cruciais para IA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>1. <code>clientes</code></strong></td>
-<td style="text-align: left;">População de agentes PF e PJ. [cite: 564]</td>
-<td style="text-align: left;"><code>nascido_em</code> (para lógica de Alvo Vulnerável). [cite: 576]</td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>Alvo Vulnerável</strong> (Idade Pagador <span class="arithmatex">\(\ge\)</span> 55)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.80\)</span></td>
+<td style="text-align: left;">Engenharia Social contra idosos.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>2. <code>contas</code></strong></td>
-<td style="text-align: left;">Contas bancárias. [cite: 580]</td>
-<td style="text-align: left;"><code>is_high_risk</code>, <code>saldo</code>, <code>aberta_em</code>. [cite: 581, 587, 588, 589]</td>
+<td style="text-align: left;"><strong>2</strong></td>
+<td style="text-align: left;"><strong>Destino de Risco</strong> (Conta Destino <span class="arithmatex">\(R=1\)</span>)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.60\)</span></td>
+<td style="text-align: left;">Transferência para laranja.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>3. <code>chaves_pix</code></strong></td>
-<td style="text-align: left;">Chaves associadas a contas. [cite: 595]</td>
-<td style="text-align: left;"><code>cadastrada_em</code> (para lógica de Chave Recente). [cite: 605]</td>
+<td style="text-align: left;"><strong>3</strong></td>
+<td style="text-align: left;"><strong>Chave Recente</strong> (Cadastro <span class="arithmatex">\(\le\)</span> 15 dias)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.40\)</span></td>
+<td style="text-align: left;">Chaves descartáveis.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>4. <code>transacoes</code></strong></td>
-<td style="text-align: left;">Eventos PIX (Legítimas e Fraudulentas). [cite: 607]</td>
-<td style="text-align: left;"><code>is_fraud</code>, <code>fraud_type</code>, <code>valor</code>, <code>data</code>, <code>id_transacao_cadeia_pai</code> (para análise de grafo). [cite: 616, 617, 618, 619, 620]</td>
+<td style="text-align: left;"><strong>4</strong></td>
+<td style="text-align: left;"><strong>Base</strong> (Nenhuma condição acima)</td>
+<td style="text-align: left;"><span class="arithmatex">\(0.35\)</span></td>
+<td style="text-align: left;">Fraude de oportunidade.</td>
 </tr>
 </tbody>
 </table>
+<p>O rótulo final é amostrado de <span class="arithmatex">\(I_F \sim Bernoulli(P(F|\mathbf{x}))\)</span>.</p>
 <hr />
-<h2 id="5-hiperparametros-de-simulacao">5. Hiperparâmetros de Simulação<a class="headerlink" href="#5-hiperparametros-de-simulacao" title="Permanent link">&para;</a></h2>
+<h3 id="5-topologias-de-grafo-estocastico">5. Topologias de Grafo Estocástico<a class="headerlink" href="#5-topologias-de-grafo-estocastico" title="Permanent link">&para;</a></h3>
+<p>Para fraudes complexas (Lavagem de Dinheiro), o sistema gera sub-grafos com propriedades estatísticas controladas.</p>
+<h4 id="51-triangulacao-fan-out">5.1. Triangulação (Fan-Out)<a class="headerlink" href="#51-triangulacao-fan-out" title="Permanent link">&para;</a></h4>
+<p>Simula a dispersão de fundos de um nó para múltiplos laranjas.</p>
+<ul>
+<li><strong>Estrutura de Árvore:</strong> Profundidade <span class="arithmatex">\(D \sim U\{2, 4\}\)</span> e Largura <span class="arithmatex">\(k \sim U\{2, 5\}\)</span>.</li>
+<li><strong>Partição de Valor (Dirichlet):</strong> A divisão do valor do nó pai para os <span class="arithmatex">\(k\)</span> filhos segue uma distribuição de Dirichlet Simétrica, garantindo soma 1 e assimetria realista.
+    <span class="arithmatex">\(<span class="arithmatex">\((p_1, \dots, p_k) \sim Dir(\mathbf{1})\)</span>\)</span></li>
+<li><strong>Delay Temporal:</strong> Introduz latência progressiva baseada na profundidade do nível (<span class="arithmatex">\(L\)</span>).
+    <span class="arithmatex">\(<span class="arithmatex">\(\Delta t \sim U[60 \cdot (L-1), 3600 \cdot (L-1)]\)</span>\)</span></li>
+</ul>
+<h4 id="52-consolidacao-fan-in">5.2. Consolidação (Fan-In)<a class="headerlink" href="#52-consolidacao-fan-in" title="Permanent link">&para;</a></h4>
+<p>Simula a agregação de fundos em uma conta mestre.</p>
+<ul>
+<li><strong>Fontes:</strong> Número de nós origem <span class="arithmatex">\(N \sim U\{10, 30\}\)</span>.</li>
+<li><strong>Janela Temporal:</strong> Convergência forçada em intervalo curto.
+    <span class="arithmatex">\(<span class="arithmatex">\(\Delta t \sim U[1, 600] \text{ segundos}\)</span>\)</span></li>
+</ul>
+<hr />
+<h3 id="6-tipologias-comportamentais-especificas">6. Tipologias Comportamentais Específicas<a class="headerlink" href="#6-tipologias-comportamentais-especificas" title="Permanent link">&para;</a></h3>
+<p>Além das topologias de grafo, o sistema modela padrões comportamentais individuais baseados em regras condicionais para simular vetores de ataque comuns.</p>
+<h4 id="61-engenharia-social-golpe-do-idoso">6.1. Engenharia Social (Golpe do Idoso)<a class="headerlink" href="#61-engenharia-social-golpe-do-idoso" title="Permanent link">&para;</a></h4>
+<p>Simula a indução da vítima ao erro.
+* <strong>Filtro de Alvo (<span class="arithmatex">\(A\)</span>):</strong> Apenas pagadores com <code>Idade</code> <span class="arithmatex">\(\ge 55\)</span> anos.
+* <strong>Probabilidade:</strong> Altíssima prioridade na árvore de decisão (<span class="arithmatex">\(P=0.80\)</span>).
+* <strong>Comportamento:</strong> Transações de valor moderado a alto, sem padrão de horário noturno forçado.</p>
+<h4 id="62-ataque-de-madrugada-automacao">6.2. Ataque de Madrugada (Automação)<a class="headerlink" href="#62-ataque-de-madrugada-automacao" title="Permanent link">&para;</a></h4>
+<p>Simula invasão de conta ou coação noturna.
+* <strong>Trigger:</strong> Probabilidade condicional <span class="arithmatex">\(P_{madrugada} = 0.70\)</span> (dado que é fraude).
+* <strong>Modificação Temporal:</strong> Se ativado, o <em>timestamp</em> da transação é forçado para uma distribuição uniforme discreta na janela crítica.
+    <span class="arithmatex">\(<span class="arithmatex">\(H_{tx} \sim U\{01, 02, 03, 04\} \text{ (Horas)}\)</span>\)</span></p>
+<h4 id="63-teste-de-conta-ping">6.3. Teste de Conta (Ping)<a class="headerlink" href="#63-teste-de-conta-ping" title="Permanent link">&para;</a></h4>
+<p>Simula a verificação de validade de uma conta laranja antes do ataque principal.
+* <strong>Trigger:</strong> Ocorre com <span class="arithmatex">\(P=0.30\)</span> antes de uma fraude em cadeia.
+* <strong>Valor (<span class="arithmatex">\(V_{teste}\)</span>):</strong> Micro-transação.
+    <span class="arithmatex">\(<span class="arithmatex">\(V_{teste} \sim U[0.01, 1.00] \text{ BRL}\)</span>\)</span>
+* <strong>Latência:</strong> Ocorre minutos antes da transação principal.
+    <span class="arithmatex">\(<span class="arithmatex">\(\Delta t \sim U\{1, \dots, 5\} \text{ minutos}\)</span>\)</span></p>
+<hr />
+<h3 id="7-hiperparametros-de-simulacao-configuracao-global">7. Hiperparâmetros de Simulação (Configuração Global)<a class="headerlink" href="#7-hiperparametros-de-simulacao-configuracao-global" title="Permanent link">&para;</a></h3>
+<p>A estabilidade estatística do universo sintético é controlada por um conjunto de constantes globais (hiperparâmetros).</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Parâmetro</th>
-<th style="text-align: left;">Chave de Configuração</th>
 <th style="text-align: left;">Valor Padrão</th>
+<th style="text-align: left;">Descrição Estatística</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Prob. Conta de Risco (<span class="arithmatex">\(p_{risco}\)</span>)</td>
 <td style="text-align: left;"><code>PROB_CONTA_ALTO_RISCO</code></td>
-<td style="text-align: left;"><strong>0.05</strong> [cite: 631]</td>
+<td style="text-align: left;"><code>0.05</code></td>
+<td style="text-align: left;">Parâmetro <span class="arithmatex">\(p\)</span> da Bernoulli para geração de contas laranjas (<span class="arithmatex">\(R\)</span>).</td>
 </tr>
 <tr>
-<td style="text-align: left;">Dias Chave (Alto Risco)</td>
 <td style="text-align: left;"><code>MAX_DIAS_CADASTRO_CHAVE_RISCO</code></td>
-<td style="text-align: left;"><strong>7</strong> [cite: 631]</td>
+<td style="text-align: left;"><code>7</code></td>
+<td style="text-align: left;">Limite superior da Uniforme para latência de chave em contas <span class="arithmatex">\(R=1\)</span>.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Saldo PF (<span class="arithmatex">\(\mu\)</span>)</td>
 <td style="text-align: left;"><code>SALDO_PF_MEAN</code></td>
-<td style="text-align: left;">6.0 [cite: 631]</td>
+<td style="text-align: left;"><code>6.0</code></td>
+<td style="text-align: left;">Média (<span class="arithmatex">\(\mu\)</span>) da Log-Normal para saldo de Pessoa Física.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Multiplicador Fraude (<span class="arithmatex">\(M\)</span>)</td>
+<td style="text-align: left;"><code>SALDO_PJ_MEAN</code></td>
+<td style="text-align: left;"><code>9.0</code></td>
+<td style="text-align: left;">Média (<span class="arithmatex">\(\mu\)</span>) da Log-Normal para saldo de Pessoa Jurídica.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>PROB_FRAUDE_BASE</code></td>
+<td style="text-align: left;"><code>0.35</code></td>
+<td style="text-align: left;"><em>Baseline</em> da probabilidade de fraude (<span class="arithmatex">\(P(F)\)</span>) sem agravantes.</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>MULTIPLICADOR_MAGNITUDE_FRAUDE</code></td>
-<td style="text-align: left;"><strong>30.0</strong> [cite: 633]</td>
+<td style="text-align: left;"><code>30.0</code></td>
+<td style="text-align: left;">Fator determinístico <span class="arithmatex">\(M\)</span> para valores fraudulentos.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Prob. Abaixo Radar</td>
-<td style="text-align: left;"><code>PROBABILIDADE_ABAIXO_RADAR</code></td>
-<td style="text-align: left;">0.40 [cite: 633]</td>
+<td style="text-align: left;"><code>PROB_ABAIXO_RADAR</code></td>
+<td style="text-align: left;"><code>0.40</code></td>
+<td style="text-align: left;">Probabilidade de substituição da Log-Normal por valores discretos.</td>
 </tr>
 <tr>
-<td style="text-align: left;">Prob. Fraude (Alvo <span class="arithmatex">\(p_{alvo}\)</span>)</td>
-<td style="text-align: left;"><code>PROBABILIDADE_FRAUDE_ENG_SOCIAL_ALVO</code></td>
-<td style="text-align: left;"><strong>0.80</strong> [cite: 638]</td>
-</tr>
-<tr>
-<td style="text-align: left;">Idade Mínima Alvo (PF)</td>
-<td style="text-align: left;"><code>IDADE_MINIMA_ALVO_ENG_SOCIAL</code></td>
-<td style="text-align: left;"><strong>55</strong> [cite: 638]</td>
-</tr>
-<tr>
-<td style="text-align: left;">Profundidade Cadeia (Min/Max)</td>
-<td style="text-align: left;"><code>FANOUT_MIN/MAX_PROFUNDIDADE</code></td>
-<td style="text-align: left;"><strong>(2, 4)</strong> [cite: 638]</td>
+<td style="text-align: left;"><code>VALORES_LIMITE_RADAR</code></td>
+<td style="text-align: left;"><code>[999.9, ...]</code></td>
+<td style="text-align: left;">Espaço amostral discreto para fraudes "Abaixo do Radar".</td>
 </tr>
 </tbody>
 </table>
+<hr />
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1418,9 +1390,55 @@ R \sim \text{Bernoulli}(p_{risco})
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../../01_arquitetura/cloud/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Arquitetura de Cloud">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Arquitetura de Cloud
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../output/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Estrutura de Saída (Output)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Estrutura de Saída (Output)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1447,7 +1465,7 @@ R \sim \text{Bernoulli}(p_{risco})
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.tabs", "toc.integrate", "content.code.copy", "content.tabs.link", "search.suggest"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.expand", "navigation.top", "navigation.footer", "navigation.instant", "toc.integrate", "content.code.copy", "content.tabs.link", "search.suggest", "search.highlight", "header.autohide"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
@@ -1455,6 +1473,8 @@ R \sim \text{Bernoulli}(p_{risco})
         <script src="../../javascripts/config.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
       
     
   </body>
