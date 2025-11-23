@@ -1,4 +1,4 @@
-# IARA - Inteligência Antifraude e Risco automátiCA
+# IARA - Inteligência Antifraude e Risco automática
 
 ![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 ![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0--dev-blue)
