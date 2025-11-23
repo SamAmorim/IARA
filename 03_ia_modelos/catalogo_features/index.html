@@ -639,8 +639,6 @@
       
         
       
-        
-      
     
     
     
@@ -947,34 +945,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../treinamento_pipeline.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Treinamento e Pipeline
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1233,6 +1203,7 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="alt text" src="../imgs/features.png" /></p>
 <hr />
 <h2 id="3-logica-de-engenharia-de-features">3. Lógica de Engenharia de Features<a class="headerlink" href="#3-logica-de-engenharia-de-features" title="Permanent link">&para;</a></h2>
 <h3 id="31-tratamento-de-tempo-e-precisao">3.1. Tratamento de Tempo e Precisão<a class="headerlink" href="#31-tratamento-de-tempo-e-precisao" title="Permanent link">&para;</a></h3>
@@ -1246,7 +1217,8 @@
 <h3 id="34-prevencao-de-vazamento-de-dados-data-leakage">3.4. Prevenção de Vazamento de Dados (Data Leakage)<a class="headerlink" href="#34-prevencao-de-vazamento-de-dados-data-leakage" title="Permanent link">&para;</a></h3>
 <p>Todas as métricas históricas (médias, contagens e somas) são calculadas utilizando uma janela estrita de <strong>exclusão do evento atual</strong>.
 * <em>Lógica:</em> As agregações consideram do tempo <code>T - Janela</code> até <code>T - 1 segundo</code>.
-* <em>Motivo:</em> Isso impede que a própria transação que está sendo analisada influencie a média histórica, o que mascararia anomalias e enviesaria o treinamento do modelo.</p>
+* <em>Motivo:</em> Isso impede que a própria transação que está sendo analisada influencie a média histórica, o que mascararia anomalias e enviesaria o treinamento do modelo.
+<img alt="alt text" src="../imgs/correlacao.png" /></p>
 
 
 
