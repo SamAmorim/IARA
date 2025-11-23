@@ -20,7 +20,7 @@
 ## 📌 Descrição Geral do Projeto
 
 
-![ACESSE A DOCUMENTAÇÂO COMPLETA](https://samamorim.github.io/IARA/)
+[ACESSE A DOCUMENTAÇÂO COMPLETA](https://samamorim.github.io/IARA/)
 
 O PIX revolucionou as transações, mas trouxe consigo um desafio crescente: a sofisticação das fraudes.  
 Este projeto apresenta um sistema ponta-a-ponta para **detecção de fraudes PIX em tempo real**.
