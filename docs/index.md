@@ -1,49 +1,53 @@
+# IARA: Inteligência Antifraude e Risco Automatizada
 
-<img src="assets/icon.svg" style="height: 60px; margin-top: 10px; display: inline-block; vertical-align: middle;" /> <h1 style="display: inline-block; vertical-align: middle;">IARA: Inteligência Antifraude e Risco Automatizada</h1>
+**Ecossistema de Dados Sintéticos e Detecção de Fraudes PIX em Tempo Real**
 
----
-![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
-![Versão](https://img.shields.io/badge/Vers%C3%A3o-v1.0.0--dev-blue)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-green)
-![Java](https://img.shields.io/badge/Backend-Java-orange?logo=openjdk)
-![Spring](https://img.shields.io/badge/Framework-SpringBoot-brightgreen?logo=springboot)
-![Python](https://img.shields.io/badge/Data%20Science-Python-blue?logo=python)
-![Databricks](https://img.shields.io/badge/Platform-Databricks-red?logo=databricks)
-![PySpark](https://img.shields.io/badge/BigData-PySpark-orange?logo=apache-spark)
-![TensorFlow](https://img.shields.io/badge/AI-TensorFlow-orange?logo=tensorflow)
-![Keras](https://img.shields.io/badge/AI-Keras-red?logo=keras)
-![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react)
-![Azure](https://img.shields.io/badge/Cloud-Azure-0078D4?logo=microsoftazure)
----
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=flat-square)
+![Versão](https://img.shields.io/badge/Versão-v1.0.0_dev-blue?style=flat-square)
+![Licença](https://img.shields.io/badge/Licença-MIT-green?style=flat-square)
 
-O projeto **IARA** é um sistema completo e robusto para a **detecção de fraudes PIX em tempo real**, utilizando uma arquitetura de **Inteligência Artificial em Cascata**. 
-
-Nossa fundação é a superação da escassez de dados de fraude, através da **simulação estatística de um ecossistema financeiro sintético** de alta fidelidade.
+![Java](https://img.shields.io/badge/Backend-Java-orange?logo=openjdk&style=flat-square)
+![TensorFlow](https://img.shields.io/badge/AI-TensorFlow-orange?logo=tensorflow&style=flat-square)
+![Databricks](https://img.shields.io/badge/Platform-Databricks-red?logo=databricks&style=flat-square)
+![Azure](https://img.shields.io/badge/Cloud-Azure-0078D4?logo=microsoftazure&style=flat-square)
 
 ---
 
-### Tecnologias Stacks Utilizadas
+## Sobre o Projeto
 
-O projeto utiliza uma ampla gama de tecnologias distribuídas nas camadas de Data Engineering, Machine Learning e Aplicações.
+O projeto **IARA** é uma solução completa para a segurança no arranjo de pagamentos PIX. O sistema opera sob uma arquitetura de microsserviços na nuvem, utilizando modelos de **Deep Learning em Cascata** para classificar transações em milissegundos.
 
-| Camada | Ferramentas Chave |
+O grande diferencial do IARA é a superação da barreira de dados bancários protegidos por sigilo: desenvolvemos um motor de **simulação estatística** que gera um ecossistema financeiro sintético de alta fidelidade (Lakehouse), permitindo o treinamento de modelos capazes de detectar tipologias complexas como *Engenharia Social* e *Lavagem de Dinheiro*.
+
+### Principais Funcionalidades
+
+* **Geração de Dados Sintéticos:** Simulação de milhões de agentes (PF/PJ) com comportamento estatístico real.
+* **Detecção em Cascata:**
+    1.  **Filtro de Risco:** Modelo Binário (Alta Sensibilidade e Recall).
+    2.  **Tipificador:** Modelo Multiclasse (Categorização do tipo de ataque).
+* **Topologias de Fraude:** Detecção de grafos complexos (Triangulação e Consolidação).
+* **Tempo Real:** Inferência via Azure Functions com baixa latência.
+
+## Stack Tecnológica
+
+O projeto utiliza uma arquitetura moderna distribuída em camadas de dados, inteligência e aplicação.
+
+| Camada | Ferramentas Principais |
 | :--- | :--- |
-| **Geração de Dados / Lakehouse** | ![Databricks](https://img.shields.io/badge/Platform-Databricks-red?logo=databricks) ![PySpark](https://img.shields.io/badge/BigData-PySpark-orange?logo=apache-spark) ![Delta Lake](https://img.shields.io/badge/Lakehouse-Delta%20Lake-E82C24?logo=databricks) ![Pandas](https://img.shields.io/badge/Data%20Mani-Pandas-150458?logo=pandas) ![NumPy](https://img.shields.io/badge/Array%20Ops-NumPy-013243?logo=numpy) ![Faker](https://img.shields.io/badge/Data%20Gen-Faker-009966) |
-| **Modelagem e Infra IA** | ![TensorFlow](https://img.shields.io/badge/AI%20Core-TensorFlow-FF6F00?logo=tensorflow) ![Keras](https://img.shields.io/badge/AI%20API-Keras-D00000?logo=keras) ![Scikit-learn](https://img.shields.io/badge/Pipelines-Scikit--learn-F7931E?logo=scikit-learn) ![MLflow](https://img.shields.io/badge/Tracking-MLflow-009A6C?logo=mlflow) ![Joblib](https://img.shields.io/badge/Serialization-Joblib-lightgrey) |
-| **Visualização e Análise** | ![Matplotlib](https://img.shields.io/badge/Viz-Matplotlib-orange) ![Seaborn](https://img.shields.io/badge/Viz-Seaborn-blue) ![PCA](https://img.shields.io/badge/Dimensionality-PCA-darkgreen) |
-| **Aplicações Backend / Persistência** | ![Java](https://img.shields.io/badge/Backend-Java-orange?logo=openjdk) ![Spring Boot](https://img.shields.io/badge/Framework-SpringBoot-brightgreen?logo=springboot) ![Hibernate](https://img.shields.io/badge/ORM-Hibernate-59666C?logo=hibernate) ![MySQL](https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql)
-| **Aplicações Frontend / Cloud** | ![React](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react) ![Azure Functions](https://img.shields.io/badge/Serverless-Azure%20Functions-0078D4?logo=microsoftazure) ![Azure VM](https://img.shields.io/badge/IaaS-Azure%20VM-0078D4?logo=microsoftazure) ![Load Balancer](https://img.shields.io/badge/Network-Load%20Balancer-blue) |
+| **Lakehouse e Data Gen** | ![Databricks](https://img.shields.io/badge/-Databricks-red?logo=databricks) ![PySpark](https://img.shields.io/badge/-PySpark-orange?logo=apache-spark) ![Delta Lake](https://img.shields.io/badge/-Delta%20Lake-E82C24?logo=databricks) |
+| **Machine Learning** | ![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?logo=tensorflow) ![Keras](https://img.shields.io/badge/-Keras-D00000?logo=keras) ![Scikit-learn](https://img.shields.io/badge/-Scikit--learn-F7931E?logo=scikit-learn) |
+| **Backend e API** | ![Java](https://img.shields.io/badge/-Java-orange?logo=openjdk) ![Spring Boot](https://img.shields.io/badge/-SpringBoot-brightgreen?logo=springboot) ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql) |
+| **Frontend e Cloud** | ![React](https://img.shields.io/badge/-React-61DAFB?logo=react) ![Azure Functions](https://img.shields.io/badge/-Azure%20Functions-0078D4?logo=microsoftazure) |
 
 ---
 
-### A Equipe
+## A Equipe
 
-Conheça os especialistas que construíram o Ecossistema de Dados Sintéticos e a Arquitetura de Classificação em Cascata.
+Especialistas responsáveis pela construção do ecossistema e arquitetura.
 
-| Nome | Papel Principal | Contato (LinkedIn) |
+| Especialista | Papel e Foco | Contato |
 | :--- | :--- | :--- |
-| **Samuel Amorim** | Modelagem Estatística, Engenharia de Dados e Ciẽncia de Dados | [Acessar Perfil](https://www.linkedin.com/in/samamorim/) |
-| **Nicholas Campanelli** | Desenvolvimento de Software (Simulador Java/React) | [Acessar Perfil](https://www.linkedin.com/in/campanellinicc/) |
-| **Rodrigo Genaro** | Arquitetura de Cloud (Azure) | [Acessar Perfil](https://www.linkedin.com/in/rodrigo-genaro-8713b726b/) |
-| **Leonardo Rondam** | Análise de Dados | [Acessar Perfil](https://www.linkedin.com/in/leonardo-rondam-910ba5214/) |
-
+| **Samuel Amorim** | Líder Técnico (Modelagem e Data Science) | [LinkedIn](https://www.linkedin.com/in/samamorim/) |
+| **Nicholas Campanelli** | Engenheiro de Software (Fullstack) | [LinkedIn](https://www.linkedin.com/in/campanellinicc/) |
+| **Rodrigo Genaro** | Arquiteto de Cloud (Azure e DevOps) | [LinkedIn](https://www.linkedin.com/in/rodrigo-genaro-8713b726b/) |
+| **Leonardo Rondam** | Analista de Dados (Insights) | [LinkedIn](https://www.linkedin.com/in/leonardo-rondam-910ba5214/) |
