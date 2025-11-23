@@ -1,7 +1,7 @@
 
 # Catalogo de Features
 
-(`transacoes_db.feature_store.in_live_features`) é a fonte única de verdade para os atributos utilizados tanto no treinamento dos modelos quanto na inferência em tempo real. Ela consolida dados cadastrais (perfil), contexto técnico do arranjo PIX e deriva métricas comportamentais complexas baseadas no histórico transacional.
+(`transacoes_db.feature_store.in_live_features`) é a fonte única de verdade para os atributos utilizados tanto no treinamento dos modelos quanto na inferência em tempo real. Ela consolida dados cadastrais (perfil), contexto técnico do arranjo PIX e deriva métricas comportamentais complexas baseadas no  histórico transacional.
 
 ## 1. Linhagem e Origem dos Dados
 

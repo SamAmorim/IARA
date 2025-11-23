@@ -28,6 +28,8 @@ O grande diferencial do IARA é a superação da barreira de dados bancários pr
 * **Topologias de Fraude:** Detecção de grafos complexos (Triangulação e Consolidação).
 * **Tempo Real:** Inferência via Azure Functions com baixa latência.
 
+---
+
 ## Stack Tecnológica
 
 O projeto utiliza uma arquitetura moderna distribuída em camadas de dados, inteligência e aplicação.
