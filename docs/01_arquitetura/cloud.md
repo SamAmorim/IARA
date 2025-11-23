@@ -3,10 +3,7 @@
 A implantacao da solucao utiliza servicos **Azure** e e projetada para garantir escalabilidade, seguranca e isolamento de rede.
 
 
-![Arquitetura_de_Cloud](Arquitetura_cloud.png)
-
-
-![Diagrama da Arquitetura de Cloud](assets/image.png)
+![Diagrama da Arquitetura de Cloud](imgs/Arquitetura_cloud.png)
 
 | Componente | Servico Azure Correspondente | Funcao na Solucao |
 | :--- | :--- | :--- |

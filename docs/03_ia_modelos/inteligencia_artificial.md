@@ -128,7 +128,22 @@ O foco deste modelo é o **Recall** (captura de fraude).
 | **ROC AUC** | 0.9806 | Capacidade de separação excepcional entre legítimo e fraude. |
 | **Recall** | 0.9267 | O modelo detecta \~92.7% de todas as fraudes apresentadas. |
 | **Precision** | 0.9220 | Baixa taxa de falsos positivos, reduzindo atrito com clientes. |
-| **F1-Score** | 0.9244 | Equilíbrio harmônico robusto. |
+| **F1-Score** | 0.9244 | Equilíbrio harmônico robusto. |.
+
+
+#### 5.1.1 Graficos 
+![alt text](imgs/binario_comparativo.png)
+---
+![alt text](imgs/binario_ROC.png)
+---
+![alt text](imgs/binario_precision_recall.png)
+---
+![alt text](imgs/binario_ifeatures.png)
+---
+![alt text](imgs/binario_aprendizado.png)
+---
+![alt text](imgs/binario_Matriz_Confusao.png)
+
 
 ### 5.2. Resultados do Modelo Multiclasse
 
@@ -142,6 +157,16 @@ Desempenho discriminatório por tipo de ataque (Métrica AUC One-vs-Rest).
 | **Triangulação (Laranja)** | 0.9651 | Muito Forte. Leve confusão com "Valor Atípico" devido à similaridade financeira. |
 
 -----
+#### 5.2.1 Graficos 
+![alt text](imgs/multiclasse_aprendizado.png)
+---
+![alt text](imgs/multiclasse_ROC.png)
+---
+![alt text](imgs/multiclasse_dispersao.png)
+---
+![alt text](imgs/multiclasse_ifeatures.png)
+---
+![alt text](imgs/multiclasse_matriz_confusao.png)
 
 ## 6\. Interpretabilidade (Feature Importance)
 
