@@ -193,6 +193,8 @@ Simula a indução da vítima ao erro.
 * **Probabilidade:** Altíssima prioridade na árvore de decisão ($P=0.80$).
 * **Comportamento:** Transações de valor moderado a alto, sem padrão de horário noturno forçado.
 
+![alt text](imgs/idade_vitimas_eng_social.png)
+
 #### 6.2. Ataque de Madrugada (Automação)
 Simula invasão de conta ou coação noturna.
 * **Trigger:** Probabilidade condicional $P_{madrugada} = 0.70$ (dado que é fraude).
@@ -211,7 +213,10 @@ Simula a verificação de validade de uma conta laranja antes do ataque principa
 
 ---
 
+![alt text](imgs/valores_tipo_fraude.png)
+
 ![alt text](imgs/Valores.png)
+
 
 ### 7. Hiperparâmetros de Simulação (Configuração Global)
 
