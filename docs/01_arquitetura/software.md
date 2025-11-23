@@ -3,7 +3,7 @@
 A arquitetura logica e baseada em microsservicos e segue um fluxo de chamadas sincrona HTTP/REST, permitindo a separacao de responsabilidades entre as camadas de transacao e de analise de IA.
 
 --- 
-![alt text](Arquitetura_de_software.svg)
+![alt text](imgs/Arquitetura_de_software.svg)
 
 ### 1. Camada Frontend
 | Componente | Funcao | Tecnologias |

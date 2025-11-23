@@ -49,7 +49,7 @@ Especialistas responsáveis pela construção do ecossistema e arquitetura.
 
 | Especialista | Papel e Foco | Contato |
 | :--- | :--- | :--- |
-| **Samuel Amorim** | Líder Técnico (Modelagem e Data Science) | [LinkedIn](https://www.linkedin.com/in/samamorim/) |
+| **Samuel Amorim** |  Modelagem estatística, Engenharia de Dados e Data Science | [LinkedIn](https://www.linkedin.com/in/samamorim/) |
 | **Nicholas Campanelli** | Engenheiro de Software (Fullstack) | [LinkedIn](https://www.linkedin.com/in/campanellinicc/) |
 | **Rodrigo Genaro** | Arquiteto de Cloud (Azure e DevOps) | [LinkedIn](https://www.linkedin.com/in/rodrigo-genaro-8713b726b/) |
 | **Leonardo Rondam** | Analista de Dados (Insights) | [LinkedIn](https://www.linkedin.com/in/leonardo-rondam-910ba5214/) |

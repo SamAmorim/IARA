@@ -80,7 +80,10 @@ Rótulos históricos utilizados exclusivamente para o treinamento supervisionado
 | `transacao_fraudulenta` | Int (0/1) | Classificação Binária (Legítimo vs. Fraude). | Alvo do Modelo 1 (Filtro de Risco). |
 | `tipo_fraude` | String | Categoria da Fraude (ex: 'engenharia_social'). | Alvo do Modelo 2 (Tipificador). |
 
+![alt text](imgs/features.png)
+
 ---
+
 
 ## 3. Lógica de Engenharia de Features
 
@@ -99,3 +102,4 @@ As features de razão (*Ratios*) possuem mecanismos de defesa contra inconsistê
 Todas as métricas históricas (médias, contagens e somas) são calculadas utilizando uma janela estrita de **exclusão do evento atual**.
 * *Lógica:* As agregações consideram do tempo `T - Janela` até `T - 1 segundo`.
 * *Motivo:* Isso impede que a própria transação que está sendo analisada influencie a média histórica, o que mascararia anomalias e enviesaria o treinamento do modelo.
+![alt text](imgs/correlacao.png)
