@@ -1,30 +1,33 @@
-site_name: IARA - Inteligencia Antifraude e Risco Automatizada
-site_url: https://SamAmorim.github.io/Fraud-Finder-Pix/ 
+site_name: IARA - Inteligência Antifraude
+site_url: https://SamAmorim.github.io/Fraud-Finder-Pix/
 site_author: Samuel Amorim, Leonardo Rondam, Nicholas Campanelli, Rodrigo Genaro
 repo_url: https://github.com/SamAmorim/Fraud-Finder-Pix/
-docs_dir: docs 
+docs_dir: docs
 
 # ----------------------------------------------------
-# Configuração do Tema Material (CORES BRADESCO + INVERSÃO)
+# Configuração do Tema Material
 # ----------------------------------------------------
 theme:
   name: material
-  # --- REMOVIDO: logo: 'assets/icon.svg' ---
+  language: pt
+  logo: 'assets/icon.svg'
+  
+  # Cores Bradesco + Inversão
   palette:
     # 1. Esquema Escuro (Padrão)
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate 
-      primary: red 
-      accent: red 
+      scheme: slate
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-4
         name: Trocar para tema claro
         
     # 2. Esquema Claro (Alternativo)
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
-      primary: red 
-      accent: red 
+      scheme: default
+      primary: red
+      accent: red
       toggle:
         icon: material/brightness-7
         name: Trocar para tema escuro
@@ -32,61 +35,75 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+    
+  # RECURSOS CRUCIAIS PARA FLUXO E DINAMISMO (Mobile)
   features:
+    - navigation.tabs                       # Transforma categorias de 1º nível em abas (Limpa a barra lateral)
+    - navigation.sections                   # A barra lateral só mostra itens da aba selecionada
+    - navigation.indexes                    # Faz com que a seção pai use um índice, guiando o usuário sequencialmente.
     - navigation.expand
-    - navigation.tabs
-    - toc.integrate
+    - navigation.top                        # Botão "Voltar ao topo"
+    - navigation.footer                     # Adiciona links "Próximo/Anterior" no final da página, indicando o fluxo.
+    - navigation.instant                    # Carregamento mais rápido das páginas
+    - toc.integrate                         # Move o índice da página para a barra lateral (economiza espaço)
     - content.code.copy
     - content.tabs.link
-    - search.suggest 
+    - search.suggest
+    - search.highlight
+    - header.autohide                       # Oculta o cabeçalho ao rolar
 
 # ----------------------------------------------------
 # Extensões e Suporte a LaTeX
 # ----------------------------------------------------
 markdown_extensions:
-  - attr_list 
+  - attr_list
   - pymdownx.arithmatex:
       generic: true
   - tables
   - admonition
   - toc:
       permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+      
+# ----------------------------------------------------
+# Recursos Extras (CSS/JS)
+# ----------------------------------------------------
 
 extra_css:
-  - stylesheets/extra.css 
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/config.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax.js
 
 # ----------------------------------------------------
-# REMOÇÃO DO ÍCONE (Favicon)
-# ----------------------------------------------------
-# --- REMOVIDO: extra: favicon: 'assets/icon.svg' ---
-# O bloco 'extra' pode ser removido ou deixado vazio se não houver outros itens.
-# Se for deixar, remova apenas a linha do favicon.
-
-# ----------------------------------------------------
-# ESTRUTURA DE NAVEGAÇÃO
+# ESTRUTURA DE NAVEGAÇÃO (Sem Emojis, Acentos Corrigidos)
 # ----------------------------------------------------
 nav:
-  - Inicio e Proposta: index.md
+  - Início e Proposta: index.md
   
   - Arquitetura:
-    - Visao Geral do Software: 01_arquitetura/software.md
+    - Visão Geral do Software: 01_arquitetura/software.md
     - Arquitetura de Cloud: 01_arquitetura/cloud.md
 
-  - Estatistica:    
-    - Modelagem Estatistica: 02_modelagem_estatistica/estatistica.md
-    - Estrutura de Saida: 02_modelagem_estatistica/output.md
+  - Modelagem Estatística:
+    - Fundamentos Estatísticos: 02_modelagem_estatistica/estatistica.md
+    - Estrutura de Saída (Output): 02_modelagem_estatistica/output.md
     
-
-
-    
-  - Modelos de Inteligencia Artificial:
-    - Arquitetura em Cascata: 03_ia_modelos/arquitetura_cascata.md
+  - Inteligência Artificial:
+    - Modelos de IA: 03_ia_modelos/inteligencia_artificial.md
+    - Catálogo de Features: 03_ia_modelos/catalogo_features.md
     - Treinamento e Pipeline: 03_ia_modelos/treinamento_pipeline.md
     
-  - Avaliacao e Resultados:
-    - Metricas e Matriz de Confusao: 04_avaliacao/metrica.md
-    - Analise de Erros e Vies: 04_avaliacao/analise_erros.md
+
+# ----------------------------------------------------
+# Configuração do MathJax
+# ----------------------------------------------------
+extra:
+  favicon: 'assets/icon.ico'
+  math:
+    enable_dollar_delimiter: true

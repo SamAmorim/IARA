@@ -1,151 +1,197 @@
-A **Modelagem Estatística** e a **Lógica de Geração** criam o Ecossistema Sintético, fornecendo um *dataset* de transações PIX de alta fidelidade para o treinamento dos modelos de IA.
+---
+id: especificacao-tecnica-modelagem
+title: "Especificação Técnica: Modelagem Estatística"
+sidebar_label: "Modelagem Estatística"
+description: "Detalhamento rigoroso das distribuições de probabilidade, grafos estocásticos e regras determinísticas que compõem o gerador de dados do IARA."
+---
+
+# Especificação Técnica: Modelagem Estatística e Estocástica
+
+Este documento detalha as distribuições de probabilidade, funções determinísticas e processos estocásticos utilizados para compor o "Universo Financeiro Sintético" do projeto IARA. A geração de dados segue o paradigma de **Modelo Preditivo Invertido**, onde comportamentos latentes (causas) são definidos *a priori* para gerar observáveis transacionais (efeitos).
+
+## Resumo das Características Modeladas
+
+### 1. Agentes e Entidades (Estado Estático)
+* **Volumetria Populacional:** Função determinística baseada em dados macroeconômicos (BACEN) e pressão de atividade ($T_{esperado}$).
+* **Demografia (Idade/Fundação):** Distribuição Uniforme Contínua ($U[a, b]$) para datas de nascimento e fundação.
+* **Densidade de Contas:** Distribuição Uniforme Discreta condicionada à natureza jurídica (PF/PJ).
+* **Risco Latente da Conta ($R$):** Variável Aleatória de Bernoulli ($p=0.05$) determinando contas "laranjas".
+* **Saldo Inicial ($S$):** Distribuição Log-Normal condicionada à natureza jurídica ($\mu, \sigma$) para simular desigualdade de riqueza.
+* **Temporalidade de Abertura:** Distribuição Uniforme condicionada ao Risco ($R$); contas fraudulentas são recentes.
+* **Latência de Chave Pix:** Distribuição Uniforme Discreta condicionada ao Risco ($R$); fraudadores operam com imediatismo.
+
+### 2. Eventos e Dinâmica (Transações)
+* **Sazonalidade Temporal:** Amostragem Categórica Ponderada (Dias Úteis/Fins de Semana) e Uniforme Contínua (Horários).
+* **Valor Transacional ($V_{tx}$):** Modelo de Mistura (*Mixture Model*) composto por uma Log-Normal Base multiplicada por Fatores de Magnitude Discretos.
+* **Causalidade de Fraude ($P(F)$):** Árvore de Decisão Probabilística Hierárquica baseada em vetores de risco (Alvo, Destino, Chave).
+* **Topologia de Lavagem (Fan-Out):** Processo de Ramificação Estocástica com Partição de Valor via Distribuição de Dirichlet.
+* **Topologia de Consolidação (Fan-In):** Convergência Temporal Uniforme em Janela Curta (Ataque Coordenado).
 
 ---
 
-## 1. Macroeconomia do Ecossistema Gerador
+## Detalhamento da Modelagem
 
-O volume total de agentes (clientes) e eventos (transações) é determinado por um **modelo determinístico** baseado em dados empíricos do BACEN e parâmetros de escala.
+### 1. Modelagem Macro-Estrutural (População)
 
-### 1.1. Cálculo do Número de Clientes
+A escala do ecossistema é ancorada na realidade econômica. O número de agentes ($N$) para um determinado município não é aleatório, mas uma função do Volume Financeiro Anual ($V_{anual}$) daquela região reportado pelo Banco Central.
 
-O número de agentes ($N_{pf}$ ou $N_{pj}$) decorre diretamente do volume observado e de uma **hipótese comportamental** ($T_{esperado}$).
-
-$$
-N_{pf} = \max\Big(1, \Big\lfloor \frac{V_{pf\_anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \Big\rfloor \Big)
-$$
+**Função Geradora de População:**
 
 $$
-N_{pj} = \max\Big(1, \Big\lfloor \frac{V_{pj\_anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \Big\rfloor \Big)
+N_{agentes} = \max\left(1, \left\lfloor \frac{V_{anual} \cdot f_{escala}}{T_{esperado} \cdot 12} \right\rfloor\right)
 $$
 
-| Variável | Descrição |
-| :--- | :--- |
-| $V_{pf\_anual}$ ou $V_{pj\_anual}$ | Volume anual de transações por PF ou PJ (dado empírico vindo do BACEN). [cite: 208] |
-| $f_{escala}$ | Parâmetro de escala definido por uma porcentagem. [cite: 209] |
-| $T_{esperado}$ | Suposição sobre a **atividade esperada** do cliente (transações por mês). [cite: 210, 220] |
+Onde:
+* **$f_{escala}$**: Fator de redução do dataset (amostragem).
+* **$T_{esperado}$**: Atividade média mensal esperada por cliente.
 
-> **Nota sobre $T_{esperado}$:** Se diminuir o valor esperado ($T_{esperado}$), mais clientes precisam ser gerados para manter o volume total, resultando em uma Atividade Média Real **MENOR** por cliente. Se aumentar o valor, menos clientes são gerados, resultando em Atividade Média Real **MAIOR**. [cite: 211-219]
+---
 
-### 1.2. Volume Mensal de Transações
+### 2. Modelagem Micro-Atributiva (Agentes)
 
-O volume de eventos (transação) a ser gerado é um escalonamento determinado dos dados empíricos. [cite: 225]
+Cada agente é instanciado com atributos estocásticos que definem seu perfil comportamental.
+
+#### 2.1. Risco Latente ($R$)
+Propriedade fundamental para a injeção de fraudes. Define se uma conta pertence a um usuário legítimo ou a um laranja/fraudador.
 
 $$
-V_{mensal} = \lfloor V_{mensal\_original} \cdot f_{escala} \rfloor
+R \sim Bernoulli(p_{risco})
+$$
+
+* **Se $R=1$ (Sucesso):** A conta assume comportamento de alto risco (abertura recente, cadastro rápido de chaves).
+* **Parâmetro padrão:** $p_{risco} = 0.05$.
+
+#### 2.2. Capacidade Financeira (Saldo)
+O saldo inicial ($S_{conta}$) modela a disparidade de riqueza utilizando uma **Distribuição Log-Normal**. Os parâmetros são ajustados condicionalmente à natureza do cliente (Pessoa Física vs. Jurídica) para garantir que empresas tenham, em média, maior liquidez e variância.
+
+$$
+S_{conta} \sim Log\text{-}Normal(\mu, \sigma^2)
+$$
+
+| Natureza | Parâmetros ($\mu, \sigma$) | Característica |
+| :--- | :--- | :--- |
+| **Pessoa Física** | $\mu=6.0, \sigma=1.5$ | Distribuição padrão de varejo. |
+| **Pessoa Jurídica** | $\mu=9.0, \sigma=1.8$ | Cauda longa (saldos multimilionários). |
+
+#### 2.3. Temporalidade Condicional
+A "idade" da conta e das chaves Pix não é aleatória, mas dependente do Risco ($R$).
+
+* **Data de Abertura:**
+    * *Baixo Risco ($R=0$):* Histórico longo, até 10 anos. $U[D_{hoje}-3650, D_{limite}]$.
+    * *Alto Risco ($R=1$):* Histórico curto, forçado nos últimos 6 meses. $U[D_{hoje}-180, D_{limite}]$.
+
+* **Latência de Cadastro de Chave ($\Delta_{chave}$):**
+    Tempo decorrido entre a abertura da conta e o cadastro da chave.
+    * *Alto Risco ($R=1$):* Imediatismo operacional. $\Delta \sim U\{1, \dots, 7\}$ dias.
+    * *Baixo Risco ($R=0$):* Comportamento orgânico. $\Delta \sim U\{1, \dots, 90\}$ dias.
+
+---
+
+### 3. Física das Transações (Eventos)
+
+A geração de cada transação é um evento independente modelado por um sistema de mistura de distribuições.
+
+#### 3.1. O Modelo de Valor ($V_{tx}$)
+O valor final não é amostrado de uma única distribuição, mas composto por um valor base estocástico e um multiplicador determinístico de contexto ($M$).
+
+$$
+V_{tx} = V_{base} \cdot M
+$$
+
+1.  **Componente Estocástico ($V_{base}$):** Segue uma Log-Normal global.
+    $$V_{base} \sim Log\text{-}Normal(\ln(150), 0.8^2)$$
+2.  **Componente Determinístico ($M$):**
+    * *Transação Normal:* $M=1$
+    * *Outlier Legítimo:* $M=2.5$ (Probabilidade de Ocorrência $P=0.04$)
+    * *Fraude Padrão:* $M=30.0$
+
+#### 3.2. Mecanismo "Abaixo do Radar"
+Para simular fraudes que tentam burlar regras de limite, uma sub-rotina substitui a distribuição contínua por valores discretos de limiar com probabilidade $P_{radar}=0.40$ (dado que é fraude).
+
+$$
+V_{tx}|(Radar=1) \sim U\{999.90, 499.90, 1999.90\}
 $$
 
 ---
 
-## 2. Modelagem Estatística de Agentes (Clientes e Contas)
+### 4. Motor de Causalidade (Probabilidade de Fraude)
 
-As características dos agentes são modeladas como variáveis aleatórias seguindo regras estatísticas para simular um comportamento realista. [cite: 227]
+A decisão de marcar uma transação como fraudulenta ($F=1$) segue uma lógica hierárquica de prioridades baseada no vetor de contexto $\mathbf{x}$.
 
-### 2.1. Idade e Tempo de Fundação (Uniforme Contínua)
+$$P(F|\mathbf{x}) = \text{select}(\mathbf{x})$$
 
-| Agente | Variável | Distribuição | Intervalo (Idade/Tempo) |
+| Prioridade | Condição ($\mathbf{x}$) | Probabilidade Atribuída | Descrição |
 | :--- | :--- | :--- | :--- |
-| **Pessoa Física** | $D_{nasc\,(PF)}$ | Uniforme | Entre 18 e 80 anos de idade. [cite: 232, 237, 238] |
-| **Pessoa Jurídica** | $D_{fund\,(PJ)}$ | Uniforme | Entre 1 e 20 anos de existência. [cite: 233, 242, 243] |
+| **1** | **Alvo Vulnerável** (Idade Pagador $\ge$ 55) | $0.80$ | Engenharia Social contra idosos. |
+| **2** | **Destino de Risco** (Conta Destino $R=1$) | $0.60$ | Transferência para laranja. |
+| **3** | **Chave Recente** (Cadastro $\le$ 15 dias) | $0.40$ | Chaves descartáveis. |
+| **4** | **Base** (Nenhuma condição acima) | $0.35$ | Fraude de oportunidade. |
 
-### 2.2. Distribuição de Contas (Uniforme Discreta)
-
-O número de contas por cliente é condicional à natureza do cliente: [cite: 245]
-
-* **PF:** $N_{contas\,|\,(PF)} \sim U\{1, 2\}$ (1 ou 2 contas, 50% de chance cada). [cite: 246, 248]
-* **PJ:** $N_{contas\,|\,(PJ)} \sim U\{1, 2, 3, 4, 5\}$ (Entre 1 e 5 contas, 20% de chance cada). [cite: 247, 249]
-
-### 2.3. Risco da Conta (Bernoulli)
-
-O perfil de risco ($R$) é a primeira característica definida e determina se a conta será classificada como "Alto Risco" ou "Risco Normal". [cite: 287, 288]
-
-$$
-R \sim \text{Bernoulli}(p_{risco})
-$$
-
-* $R=1$ (Alto Risco) ou $R=0$ (Risco Normal). [cite: 291]
-* $p_{risco}$ é a probabilidade de sucesso (Alto Risco), definida pela variável `PROB_CONTA_ALTO_RISCO` (ex: 0.03). [cite: 292]
-
-### 2.4. Data de Abertura Condicional
-
-A data de abertura da conta ($D_{abertura}$) é amostrada de forma estritamente **condicional ao Risco da Conta ($R$)**: [cite: 313]
-
-* **Alto Risco ($R=1$):** Contas são **forçadas a serem recentes** (criadas nos últimos 6 meses). [cite: 325, 326]
-* **Risco Normal ($R=0$):** Contas podem ser significativamente mais antigas (até 10 anos). [cite: 323, 327]
-
-### 2.5. Saldo Inicial da Conta (Log-Normal)
-
-O saldo inicial ($S_{conta}$) é modelado usando a **Distribuição Log-Normal**. [cite: 329] Os parâmetros são definidos condicionalmente à natureza do cliente para simular saldos mais altos para PJ. [cite: 332, 340]
-
-| Cliente | $\mu$ (Localização) | $\sigma$ (Escala/Variação) |
-| :--- | :--- | :--- |
-| **Pessoa Física (PF)** | 6.0 [cite: 334] | 1.5 [cite: 335] |
-| **Pessoa Jurídica (PJ)** | 9.0 [cite: 337] | 1.8 [cite: 338] |
+O rótulo final é amostrado de $I_F \sim Bernoulli(P(F|\mathbf{x}))$.
 
 ---
 
-## 3. Modelagem de Fraudes e Eventos
+### 5. Topologias de Grafo Estocástico
 
-### 3.1. Valor da Transação (Modelo de Mistura)
+Para fraudes complexas (Lavagem de Dinheiro), o sistema gera sub-grafos com propriedades estatísticas controladas.
 
-O valor final da transação ($V_{tx}$) é o produto do **Valor Base** ($V_{base} \sim \text{Log-Normal}$) e um **Multiplicador** ($M$). [cite: 384, 385]
+#### 5.1. Triangulação (Fan-Out)
+Simula a dispersão de fundos de um nó para múltiplos laranjas.
 
-| Categoria | Multiplicador ($M$) | Lógica de Ocorrência |
-| :--- | :--- | :--- |
-| **Normal** | $M = 1$ | O valor base não muda. [cite: 391] |
-| **Outlier Legítimo** | $M = 2.5$ (Fixo) | Ocorre com probabilidade de 4% ($\neg$ Fraude). [cite: 392, 397] |
-| **Fraude** | $M = 30$ (Fixo, Alto) | Valor significativamente maior que o normal. [cite: 398, 399] |
+* **Estrutura de Árvore:** Profundidade $D \sim U\{2, 4\}$ e Largura $k \sim U\{2, 5\}$.
+* **Partição de Valor (Dirichlet):** A divisão do valor do nó pai para os $k$ filhos segue uma distribuição de Dirichlet Simétrica, garantindo soma 1 e assimetria realista.
+    $$(p_1, \dots, p_k) \sim Dir(\mathbf{1})$$
+* **Delay Temporal:** Introduz latência progressiva baseada na profundidade do nível ($L$).
+    $$\Delta t \sim U[60 \cdot (L-1), 3600 \cdot (L-1)]$$
 
-### 3.2. Lógica Sequencial Condicional de Fraude ($P(\text{Fraude})$)
+#### 5.2. Consolidação (Fan-In)
+Simula a agregação de fundos em uma conta mestre.
 
-A **Probabilidade de Fraude** ($P(\text{Fraude})$) é determinada por uma **lógica sequencial e condicional** baseada em prioridade de risco: [cite: 429]
-
-* **Prioridade 1 (Máxima):** Se o pagador for um **Alvo Vulnerável** ($A$: PF $\geq 55$ anos), $p_{alvo}=0.80$. [cite: 423, 424]
-* **Prioridade 2:** Se não for Alvo Vulnerável ($\neg A$) e o destino for **Alto Risco** ($R$), $p_{risco}=0.60$. [cite: 425]
-* **Prioridade 3:** Se $\neg A$, $\neg R$ e a **Chave PIX for Recente** ($C$), $p_{recente}=0.40$. [cite: 426, 427]
-* **Prioridade 4 (Base):** Se nenhuma condição de risco for atendida, $p_{base}=0.35$. [cite: 428]
-
-### 3.3. Padrões Comportamentais Injetados
-
-Uma vez rotulada como fraude ($F=1$), a transação é classificada em um tipo, o que desencadeia padrões específicos: [cite: 467]
-
-| Tipo de Fraude | Sinal Comportamental Injetado | Modelo Estatístico |
-| :--- | :--- | :--- |
-| **Engenharia Social** | Fraude de alto valor com $p_{alvo}$. [cite: 472] | Condição $A$. [cite: 472] |
-| **Ataque de Madrugada** | Horário forçado para $H_{tx} \sim U\{1, 2, 3, 4\}$ (1h-4h). [cite: 472] | Uniforme Discreta. [cite: 472] |
-| **Teste de Conta** | Transação prévia de **baixo valor** ($\sim U[0.01, 1.00]$) com pequeno *delay*. [cite: 472] | Uniforme Contínua/Discreta. [cite: 472] |
-| **Abaixo do Radar** | Valor **substituído** por valores discretos (ex: 999.90, 1999.90). [cite: 527, 528] | Uniforme Discreta de valores-limite. [cite: 531] |
-
-### 3.4. Fraudes em Cadeia (Topologia e Grafos)
-
-As fraudes em cadeia são modeladas como **processos estocásticos em grafo** para camuflar o movimento de fundos. [cite: 484]
-
-* **Triangulação (Fan-Out):** Fragmentação do valor (divisão) para múltiplos nós sucessores. [cite: 486, 502] A divisão é feita via **Distribuição de Dirichlet**. [cite: 503]
-* **Consolidação (Fan-In):** Convergência de múltiplas arestas (origens $N_{fontes} \sim U[10, 30]$) em um único nó destino em uma janela de tempo curta ($\Delta_{segundos} \sim U[1, 600]$ segundos). [cite: 504, 506]
+* **Fontes:** Número de nós origem $N \sim U\{10, 30\}$.
+* **Janela Temporal:** Convergência forçada em intervalo curto.
+    $$\Delta t \sim U[1, 600] \text{ segundos}$$
 
 ---
 
-## 4. Modelo de Dados de Saída (Tabelas Delta)
+### 6. Tipologias Comportamentais Específicas
 
-O *pipeline* gera quatro tabelas Delta principais para materializar os agentes e eventos, armazenadas no *database* `transacoes_db.copper`. [cite: 561, 562]
+Além das topologias de grafo, o sistema modela padrões comportamentais individuais baseados em regras condicionais para simular vetores de ataque comuns.
 
-| Tabela | Descrição | Sinais Cruciais para IA |
-| :--- | :--- | :--- |
-| **1. `clientes`** | População de agentes PF e PJ. [cite: 564] | `nascido_em` (para lógica de Alvo Vulnerável). [cite: 576] |
-| **2. `contas`** | Contas bancárias. [cite: 580] | `is_high_risk`, `saldo`, `aberta_em`. [cite: 581, 587, 588, 589] |
-| **3. `chaves_pix`** | Chaves associadas a contas. [cite: 595] | `cadastrada_em` (para lógica de Chave Recente). [cite: 605] |
-| **4. `transacoes`** | Eventos PIX (Legítimas e Fraudulentas). [cite: 607] | `is_fraud`, `fraud_type`, `valor`, `data`, `id_transacao_cadeia_pai` (para análise de grafo). [cite: 616, 617, 618, 619, 620] |
+#### 6.1. Engenharia Social (Golpe do Idoso)
+Simula a indução da vítima ao erro.
+* **Filtro de Alvo ($A$):** Apenas pagadores com `Idade` $\ge 55$ anos.
+* **Probabilidade:** Altíssima prioridade na árvore de decisão ($P=0.80$).
+* **Comportamento:** Transações de valor moderado a alto, sem padrão de horário noturno forçado.
+
+#### 6.2. Ataque de Madrugada (Automação)
+Simula invasão de conta ou coação noturna.
+* **Trigger:** Probabilidade condicional $P_{madrugada} = 0.70$ (dado que é fraude).
+* **Modificação Temporal:** Se ativado, o *timestamp* da transação é forçado para uma distribuição uniforme discreta na janela crítica.
+    $$H_{tx} \sim U\{01, 02, 03, 04\} \text{ (Horas)}$$
+
+#### 6.3. Teste de Conta (Ping)
+Simula a verificação de validade de uma conta laranja antes do ataque principal.
+* **Trigger:** Ocorre com $P=0.30$ antes de uma fraude em cadeia.
+* **Valor ($V_{teste}$):** Micro-transação.
+    $$V_{teste} \sim U[0.01, 1.00] \text{ BRL}$$
+* **Latência:** Ocorre minutos antes da transação principal.
+    $$\Delta t \sim U\{1, \dots, 5\} \text{ minutos}$$
 
 ---
 
-## 5. Hiperparâmetros de Simulação
+### 7. Hiperparâmetros de Simulação (Configuração Global)
 
-| Parâmetro | Chave de Configuração | Valor Padrão |
+A estabilidade estatística do universo sintético é controlada por um conjunto de constantes globais (hiperparâmetros).
+
+| Parâmetro | Valor Padrão | Descrição Estatística |
 | :--- | :--- | :--- |
-| Prob. Conta de Risco ($p_{risco}$) | `PROB_CONTA_ALTO_RISCO` | **0.05** [cite: 631] |
-| Dias Chave (Alto Risco) | `MAX_DIAS_CADASTRO_CHAVE_RISCO` | **7** [cite: 631] |
-| Saldo PF ($\mu$) | `SALDO_PF_MEAN` | 6.0 [cite: 631] |
-| Multiplicador Fraude ($M$) | `MULTIPLICADOR_MAGNITUDE_FRAUDE` | **30.0** [cite: 633] |
-| Prob. Abaixo Radar | `PROBABILIDADE_ABAIXO_RADAR` | 0.40 [cite: 633] |
-| Prob. Fraude (Alvo $p_{alvo}$) | `PROBABILIDADE_FRAUDE_ENG_SOCIAL_ALVO` | **0.80** [cite: 638] |
-| Idade Mínima Alvo (PF) | `IDADE_MINIMA_ALVO_ENG_SOCIAL` | **55** [cite: 638] |
-| Profundidade Cadeia (Min/Max) | `FANOUT_MIN/MAX_PROFUNDIDADE` | **(2, 4)** [cite: 638] |
+| `PROB_CONTA_ALTO_RISCO` | `0.05` | Parâmetro $p$ da Bernoulli para geração de contas laranjas ($R$). |
+| `MAX_DIAS_CADASTRO_CHAVE_RISCO` | `7` | Limite superior da Uniforme para latência de chave em contas $R=1$. |
+| `SALDO_PF_MEAN` | `6.0` | Média ($\mu$) da Log-Normal para saldo de Pessoa Física. |
+| `SALDO_PJ_MEAN` | `9.0` | Média ($\mu$) da Log-Normal para saldo de Pessoa Jurídica. |
+| `PROB_FRAUDE_BASE` | `0.35` | *Baseline* da probabilidade de fraude ($P(F)$) sem agravantes. |
+| `MULTIPLICADOR_MAGNITUDE_FRAUDE` | `30.0` | Fator determinístico $M$ para valores fraudulentos. |
+| `PROB_ABAIXO_RADAR` | `0.40` | Probabilidade de substituição da Log-Normal por valores discretos. |
+| `VALORES_LIMITE_RADAR` | `[999.9, ...]` | Espaço amostral discreto para fraudes "Abaixo do Radar". |
+
+---

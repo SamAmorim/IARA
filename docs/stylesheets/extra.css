@@ -1,17 +1,72 @@
-/* docs/stylesheets/extra.css */
+/*
+ * ----------------------------------------------------
+ * ESTILOS PERSONALIZADOS PARA MKDOCS MATERIAL
+ * Otimizado para Leitura, Responsividade e Branding
+ * ----------------------------------------------------
+ */
 
-/* 1. Inverte cores para IMAGENS NO CONTE�DO (index.md) */
-[data-md-color-scheme="slate"] img {
-  filter: invert(100%) hue-rotate(180deg);
+/* 1. TÍTULOS EM NEGRITO (Ajuste solicitado) */
+/* Garante que todos os títulos de seção fiquem em negrito para melhor escaneabilidade */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-weight: 700; /* Define a fonte como negrito forte */
 }
 
-/* 2. FOR�A O LOGO DO CABE�ALHO A SER SEMPRE BRANCO (#FFFFFF) */
-/* Usa o seletor universal (*) para atingir todos os elementos SVG dentro do logo. */
-.md-header__button.md-logo * {
-    fill: #FFFFFF !important; 
+/* 2. Cores de Destaque e Links */
+/* Torna os links mais visíveis e usa a cor de acento */
+a {
+  color: var(--md-accent-fg); /* Garante que os links usem a cor de acento (vermelho) */
+  text-decoration: none;
 }
 
-/* 3. Garante que o container do logo n�o aplique filtros de cor */
-.md-header__button.md-logo {
-    filter: none;
+a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse para melhor feedback */
+}
+
+/* 3. Ajuste de Altura de Linha (Line Height) */
+/* Aumenta a altura da linha para que o texto longo seja mais fácil de ler em mobile */
+.md-typeset p, 
+.md-typeset ul, 
+.md-typeset ol {
+  line-height: 1.7; 
+}
+
+/* 4. Suavização de Fonte */
+/* Melhora a renderização da fonte em telas de alta resolução */
+.md-typeset {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. Refinamento de Blocos de Código */
+/* Adiciona padding interno e sombra leve aos blocos de código */
+.highlight, 
+.md-typeset pre {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  font-size: 0.9em; /* Levemente menor para caber mais código */
+}
+
+/* 6. Estilo para Caixas de Advertência (Admonitions) */
+/* Adiciona um toque visual sutil nas bordas das caixas de observação */
+.md-typeset .admonition {
+  border-left: 5px solid var(--md-accent-fg);
+  border-radius: 4px;
+}
+
+/* 7. Responsividade de Tabelas (CRUCIAL para Mobile) */
+/* Garante que as tabelas longas possam ser roladas horizontalmente em telas pequenas */
+.md-typeset table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap; /* Impede a quebra de linha dentro das células */
+}
+
+/* 8. Estilo para botões e elementos interativos */
+.md-button {
+  border-radius: 4px; /* Suaviza os cantos dos botões */
 }
