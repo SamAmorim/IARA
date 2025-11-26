@@ -18,7 +18,7 @@ export default function Inicio() {
             <Box className="flex flex-col h-full">
                 <Box className="flex flex-1 flex-col p-6 gap-6 h-full overflow-auto">
                     <img
-                        src="icon-white.svg"
+                        src="/images/icon-white.svg"
                         alt="IARA"
                         width={80}
                         className="self-center"
@@ -54,7 +54,7 @@ export default function Inicio() {
                         </Typography>
                         <Link variant="caption" href="https://samamorim.github.io/Fraud-Finder-Pix/" className="flex items-center flex-col">
                             <img
-                                src="/code.png"
+                                src="/images/code.png"
                                 width={100}
                                 alt="Código"
                                 className="self-center"
