@@ -7,6 +7,7 @@ import os
 import json
 import numpy as np
 import pandas as pd
+import logging
 import mlflow
 from pathlib import Path
 from datetime import datetime
@@ -29,22 +30,22 @@ LABEL_MAP_PATH = os.path.join(ARTIFACT_DIR, "fraud_type_label_map.json")
 # ==========================================================
 # 2. Carregamento dos modelos e metadados
 # ==========================================================
-print(f"Carregando modelo binário de: {BINARY_MODEL_PATH}...")
+logging.info(f"Carregando modelo binário de: {BINARY_MODEL_PATH}...")
 model_binary = mlflow.sklearn.load_model(BINARY_MODEL_PATH)
-print("Modelo binário carregado com sucesso.")
+logging.info("Modelo binário carregado com sucesso.")
 
-print(f"Carregando modelo multiclasse de: {MULTICLASS_MODEL_PATH}...")
+logging.info(f"Carregando modelo multiclasse de: {MULTICLASS_MODEL_PATH}...")
 model_multiclass = mlflow.sklearn.load_model(MULTICLASS_MODEL_PATH)
-print("Modelo multiclasse carregado com sucesso.")
+logging.info("Modelo multiclasse carregado com sucesso.")
 
-print(f"Carregando mapa de labels de: {LABEL_MAP_PATH}...")
+logging.info(f"Carregando mapa de labels de: {LABEL_MAP_PATH}...")
 with open(LABEL_MAP_PATH, "r") as f:
     label_map_raw = json.load(f)
 
 # Normalizar o mapa de labels para int -> nome e criar lista ordenada de classes
 label_map_int = {int(k): v for k, v in label_map_raw.items()}
 multiclass_class_names = [label_map_int[k] for k in sorted(label_map_int.keys())]
-print(f"Mapa de labels carregado. Classes ordenadas: {multiclass_class_names}")
+logging.info(f"Mapa de labels carregado. Classes ordenadas: {multiclass_class_names}")
 
 # ==========================================================
 # 3. Função de inferência
@@ -56,18 +57,18 @@ def run_inference(input_df: pd.DataFrame, fraud_threshold: float = 0.5):
     2. Modelo multiclasse → tipo de fraude (se aplicável)
     Retorna dict com probabilidades e mapeamentos por tipo.
     """
-    print(f"\n--- Recebida {len(input_df)} transação(s) para análise. ---")
-    print("DEBUG - input_df.dtypes:")
-    print(input_df.dtypes)
-    print("DEBUG - input_df.head():")
-    print(input_df.head().to_string())
+    logging.info(f"\n--- Recebida {len(input_df)} transação(s) para análise. ---")
+    logging.info("DEBUG - input_df.dtypes:")
+    logging.info(input_df.dtypes)
+    logging.info("DEBUG - input_df.head():")
+    logging.info(input_df.head().to_string())
 
     # ======================================================
     # Etapa 1: Modelo Binário (Detecção de Fraude)
     # ======================================================
-    print("\nExecutando modelo binário...")
+    logging.info("\nExecutando modelo binário...")
     pred_binary_proba_array = model_binary.predict_proba(input_df)
-    print(f"DEBUG - Probabilidades retornadas pelo modelo binário: {pred_binary_proba_array}")
+    logging.info(f"DEBUG - Probabilidades retornadas pelo modelo binário: {pred_binary_proba_array}")
 
     # --- CORREÇÃO ROBUSTA PARA VÁRIOS FORMATOS DE SAÍDA ---
     proba = pred_binary_proba_array
@@ -85,11 +86,11 @@ def run_inference(input_df: pd.DataFrame, fraud_threshold: float = 0.5):
         # Pode ser float ou outro tipo; forçar float
         pred_binary_proba_float = float(round(float(proba), 4))
 
-    print(f"DEBUG - Probabilidade normalizada (fraude=1): {pred_binary_proba_float}")
+    logging.info(f"DEBUG - Probabilidade normalizada (fraude=1): {pred_binary_proba_float}")
 
     pred_binary_label = int(pred_binary_proba_float >= fraud_threshold)
-    print(f"Probabilidade de fraude (classe=1): {pred_binary_proba_float}")
-    print(f"Predição binária final: {'FRAUDE' if pred_binary_label == 1 else 'LEGÍTIMA'}")
+    logging.info(f"Probabilidade de fraude (classe=1): {pred_binary_proba_float}")
+    logging.info(f"Predição binária final: {'FRAUDE' if pred_binary_label == 1 else 'LEGÍTIMA'}")
 
     # ======================================================
     # Etapa 2: Modelo Multiclasse (Classificação do Tipo de Fraude)
@@ -99,9 +100,9 @@ def run_inference(input_df: pd.DataFrame, fraud_threshold: float = 0.5):
     pred_multi_proba_dict = None
 
     if pred_binary_label == 1:
-        print("\nExecutando modelo multiclasse (tipo de fraude)...")
+        logging.info("\nExecutando modelo multiclasse (tipo de fraude)...")
         pred_multi_proba_array = model_multiclass.predict_proba(input_df)
-        print(f"DEBUG - Probabilidades retornadas pelo modelo multiclasse: {pred_multi_proba_array}")
+        logging.info(f"DEBUG - Probabilidades retornadas pelo modelo multiclasse: {pred_multi_proba_array}")
 
         # Normalizar para vetor de probabilidades por classes
         if isinstance(pred_multi_proba_array, np.ndarray) and pred_multi_proba_array.ndim == 2:
@@ -115,7 +116,7 @@ def run_inference(input_df: pd.DataFrame, fraud_threshold: float = 0.5):
         # cortamos/expandimos com zeros (defensivo).
         n_classes = len(multiclass_class_names)
         if prob_array.size != n_classes:
-            print(f"Aviso: número de probabilidades ({prob_array.size}) != número de classes ({n_classes}). Ajustando de forma defensiva.")
+            logging.info(f"Aviso: número de probabilidades ({prob_array.size}) != número de classes ({n_classes}). Ajustando de forma defensiva.")
             # Ajustar: se houver mais probs, truncar; se houver menos, preencher com zeros
             if prob_array.size > n_classes:
                 prob_array = prob_array[:n_classes]
@@ -133,10 +134,10 @@ def run_inference(input_df: pd.DataFrame, fraud_threshold: float = 0.5):
         pred_multi_label = multiclass_class_names[argmax_idx]
         pred_multi_proba = float(round(float(prob_array[argmax_idx]), 4))
 
-        print(f"Tipo de fraude previsto: {pred_multi_label} (confiança={pred_multi_proba})")
-        print(f"Probabilidades por tipo: {pred_multi_proba_dict}")
+        logging.info(f"Tipo de fraude previsto: {pred_multi_label} (confiança={pred_multi_proba})")
+        logging.info(f"Probabilidades por tipo: {pred_multi_proba_dict}")
     else:
-        print("Transação legítima — modelo multiclasse não executado.")
+        logging.info("Transação legítima — modelo multiclasse não executado.")
 
     # ======================================================
     # Retornar resultado consolidado
@@ -195,6 +196,6 @@ def rodar(transacao: Transacao) -> dict[str, any]:
     df_input = pd.DataFrame(data)
     resultado = run_inference(df_input)
 
-    print("\n--- Resultado Final ---")
-    print(json.dumps(resultado, indent=4, ensure_ascii=False))
+    logging.info("\n--- Resultado Final ---")
+    logging.info(json.dumps(resultado, indent=4, ensure_ascii=False))
     return resultado

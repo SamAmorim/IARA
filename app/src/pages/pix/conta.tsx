@@ -50,7 +50,7 @@ export default function PixConta() {
 
     function handleContinue() {
         if (!contaOrigemSelecionada) return
-        navigate("/pix")
+        navigate("/pix/chave")
     }
 
     return (
@@ -97,13 +97,13 @@ export default function PixConta() {
                                                 {conta.nomeCliente}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Registro: {conta.registroNacionalCliente}
+                                                <strong>Registro:</strong> {conta.registroNacionalCliente}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Instituição: {conta.nomeInstituicao}
+                                                <strong>Instituição:</strong> {conta.nomeInstituicao}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Saldo: {formatMoney(conta.saldo)}
+                                                <strong>Saldo:</strong> {formatMoney(conta.saldo)}
                                             </Typography>
                                         </Box>
                                     </CardContent>

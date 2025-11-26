@@ -2,6 +2,7 @@ package org.uam.sdm.pixapi.integrations.impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
 import org.springframework.stereotype.Component;
@@ -21,11 +22,15 @@ import reactor.core.publisher.Mono;
 public class AnaliseIntegrationImpl implements AnaliseIntegration {
 
     private final WebClient webClient;
+    private final String analiseApiKey;
 
-    @Value("${integration.analiseapi.url}")
-    private String analiseApiUrl;
+    public AnaliseIntegrationImpl(
+        WebClient.Builder webClientBuilder,
+        @Value("${integration.analiseapi.url}") String analiseApiUrl,
+        @Value("${integration.analiseapi.key}") String analiseApiKey
+    ) {
+        this.analiseApiKey = analiseApiKey;
 
-    public AnaliseIntegrationImpl(WebClient.Builder webClientBuilder) {
         ObjectMapper objectMapper = new ObjectMapper()
                 .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
 
@@ -40,7 +45,7 @@ public class AnaliseIntegrationImpl implements AnaliseIntegration {
                 .build();
 
         this.webClient = webClientBuilder
-                .baseUrl("http://localhost:7071/api")
+                .baseUrl(analiseApiUrl)
                 .exchangeStrategies(exchangeStrategies)
                 .build();
     }
@@ -53,11 +58,13 @@ public class AnaliseIntegrationImpl implements AnaliseIntegration {
         };
 
         Mono<AnaliseApiIntegrationResponse<AnalisarTransacaoIntegrationResponse>> resultado = webClient.post()
-                .uri("/fazer_analise")
+                .uri("/analisar")
+                .header("x-functions-key", analiseApiKey)
                 .bodyValue(analisarTransacaoDto)
                 .retrieve()
-                .onStatus(status -> status.is4xxClientError(), response -> {
-                    return response.bodyToMono(AnaliseApiIntegrationResponse.class).flatMap(errorBody -> {
+                .onStatus(HttpStatusCode::isError, response -> {
+                    return response.bodyToMono(String.class).flatMap(errorBody -> {
+                        System.err.println("Erro na integração com o serviço de análise:  " + errorBody);
                         return Mono.error(new RuntimeException("Erro na análise: " + errorBody));
                     });
                 })

@@ -11,7 +11,7 @@ export interface EnviarPixSucessoResponse {
     nomeFinalidadePix: string
     idTipoIniciacaoPix: number
     nomeTipoIniciacaoPix: string
-    data: Date
+    data: string
     mensagem: string
 }
 

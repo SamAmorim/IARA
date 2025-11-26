@@ -1,4 +1,4 @@
-import { Button } from "@mui/material"
+import { Button, Link } from "@mui/material"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import HeaderDetail from "components/header-detail"
@@ -14,21 +14,53 @@ export default function Inicio() {
 
     return (
         <>
-            <HeaderDetail height={200} />
+            <HeaderDetail height={350} />
             <Box className="flex flex-col h-full">
                 <Box className="flex flex-1 flex-col p-6 gap-6 h-full overflow-auto">
+                    <img
+                        src="/images/icon-white.svg"
+                        alt="IARA"
+                        width={80}
+                        className="self-center"
+                    />
+                    <Box>
+                        <Typography
+                            variant="h3"
+                            component="h1"
+                            color="primary.contrastText"
+                            className="text-center mb-2"
+                        >
+                            Bem-vindo ao projeto IARA!
+                        </Typography>
+                        <Typography
+                            variant="h2"
+                            color="primary.contrastText"
+                            className="text-center text-sm mb-8"
+                        >
+                            Inteligência Antifraude e Risco Automatizada
+                        </Typography>
+                    </Box>
                     <Typography
-                        variant="h1"
-                        className="mb-12"
-                        color="primary.contrastText"
+                        variant="body1"
                     >
-                        Bem-vindo à Simulação Pix!
+                        O IARA é um sistema robusto e desacoplado capaz de detectar fraudes em transações Pix em tempo real utilizando uma arquitetura de Inteligência Artificial em cascata.
                     </Typography>
-                    <Box className="flex justify-center">
-                        <img
-                            src="/phone.png"
-                            width={300}
-                        />
+                    <Box>
+                        <Typography
+                            variant="h5"
+                            gutterBottom
+                        >
+                            Saiba mais:
+                        </Typography>
+                        <Link variant="caption" href="https://samamorim.github.io/Fraud-Finder-Pix/" className="flex items-center flex-col">
+                            <img
+                                src="/images/code.png"
+                                width={100}
+                                alt="Código"
+                                className="self-center"
+                            />
+                            https://samamorim.github.io/Fraud-Finder-Pix/
+                        </Link>
                     </Box>
                     <Button
                         variant="contained"
@@ -38,7 +70,7 @@ export default function Inicio() {
                         className="self-baseline"
                         onClick={handleContinue}
                     >
-                        Fazer Pix
+                        Iniciar simulação
                     </Button>
                 </Box>
             </Box>

@@ -1,9 +1,13 @@
+import setuptools.dist
 import azure.functions as func
 import logging
 import json
+from azure.monitor.opentelemetry import configure_azure_monitor
 from pydantic import ValidationError
 from application.services import analise_service
 from application.models.transacao import Transacao
+
+configure_azure_monitor()
 
 app = func.FunctionApp()
 

@@ -15,7 +15,7 @@ const routes = createBrowserRouter([
                 index: true,
                 Component: Inicio,
                 handle: {
-                    title: "Simulação Pix",
+                    title: "IARA",
                     showBackButton: false,
                 } as RouteHandle,
                 path: "/",
