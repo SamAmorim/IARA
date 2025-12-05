@@ -6,6 +6,15 @@ import type { ObterContaListResponse } from "typesrc/services/pixService/ObterCo
 import type { ObterContaPorChavePixResponse } from "typesrc/services/pixService/ObterContaPorChavePixResponse"
 import API from "./api"
 
+function isFraudResponse(error: unknown): error is AxiosError & { response: { data: { detalhes?: { isFraud: boolean } } } } {
+    return (
+        typeof error === 'object' &&
+        error !== null &&
+        (error as any).isAxiosError === true &&
+        'response' in error &&
+        (error as any).response?.data?.detalhes?.isFraud === true
+    )
+}
 
 function isAxiosErrorWithResponse(error: unknown): error is AxiosError & { response: { data: { mensagem?: string } } } {
     return (
@@ -23,6 +32,10 @@ async function enviarPix(request: EnviarPixRequest): Promise<EnviarPixResponse> 
     }
     catch (error: unknown) {
         console.error("Erro ao enviar Pix:", error)
+
+        if (isFraudResponse(error)) {
+            return error.response.data.detalhes as EnviarPixResponse
+        }
 
         if (isAxiosErrorWithResponse(error) && error.response.data?.mensagem) {
             throw new Error(error.response.data.mensagem)

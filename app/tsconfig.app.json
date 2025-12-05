@@ -24,7 +24,6 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
-    "typescript.preferences.importModuleSpecifier": "non-relative",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",

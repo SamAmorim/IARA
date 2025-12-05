@@ -19,13 +19,13 @@ export default function PixContextProvider({
     const [resumo, setResumo] = useState<IPixContext["resumo"]>(undefined
         // {
         // isFraud: true,
-        // fraudType: "triangulacao_conta_laranja",
+        // fraudType: "triangulacaoContaLaranja",
         // fraudProbability: 0.4,
         // fraudTypeConfidence: 0.7,
         // fraudTypeProbabilities: {
         //     consolidacaoFundos: 0.4,
         //     engenhariaSocial: 0.2,
-        //     triangulacaoContaLaranja: 0.05,
+        //     : 0.05,
         //     valorAtipico: 0.006
         // }
         // isFraud: false,
